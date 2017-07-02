@@ -67,6 +67,8 @@ create table trab.regiao(
 );
 
 /*Alter tables*/
+alter table trab.endereco
+  add constraint un_endereco unique (cep, numero);
 alter table trab.pessoa
   add constraint pk_pessoa primary key (codigo);
 alter table trab.pessoa
@@ -78,19 +80,25 @@ alter table trab.endereco
   add foreign key (cod_regiao) references trab.regiao(codigo)
   on update cascade on delete cascade;
 alter table trab.telefone
+  add constraint un_telefone unique (numero, cod_pessoa);
+alter table trab.telefone
   add constraint pk_telefone primary key (numero,cod_pessoa);
 alter table trab.telefone
   add foreign key (cod_pessoa) references trab.pessoa(codigo)
   on update cascade on delete cascade;
+alter table trab.pedido
+  add constraint un_pedido unique (cod_pedido, cod_cliente);
 alter table trab.pedido
   add constraint pk_pedido primary key (cod_pedido, cod_cliente);
 alter table trab.pedido
   add foreign key (cod_cliente) references trab.pessoa(codigo)
   on update cascade on delete cascade;
 alter table trab.comp_pedido
+  add constraint un_comp_pedido unique (cod_pedido, cod_item);
+alter table trab.comp_pedido
   add constraint pk_comp_pedido primary key (cod_pedido, cod_item);
 alter table trab.comp_pedido
-  add foreign key (cod_pedido) references trab.pedido(codigo),
+  add foreign key (cod_pedido) references trab.pedido(cod_pedido),
   add foreign key (cod_item) references trab.item(codigo)
   on update cascade on delete cascade;
 alter table trab.produto
@@ -109,6 +117,8 @@ alter table trab.item
   add foreign key (cod_produto) references trab.produto(codigo),
   add foreign key (cod_fornecedor) references trab.pessoa(codigo)
   on update cascade on delete cascade;
+alter table trab.estoque
+  add constraint un_estoque unique (cod_item, cod_deposito);
 alter table trab.estoque
   add constraint pk_estoque primary key (cod_item, cod_deposito);
 alter table trab.estoque
