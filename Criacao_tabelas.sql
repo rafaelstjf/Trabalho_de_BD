@@ -53,12 +53,12 @@ create table trab.item(
   cod_fornecedor varchar(15) not NULL,
   preco_compra float not NULL,
   quantidade integer not NULL,
-  data_compra data not NULL
+  data_compra date not NULL
 );
 create table trab.estoque(
   cod_item varchar(10) not NULL,
   cod_deposito varchar(10) not NULL,
-  quantidade integer not NULL,
+  quantidade integer not NULL
 );
 create table trab.regiao(
   codigo varchar(15) not NULL UNIQUE,
@@ -70,7 +70,7 @@ create table trab.regiao(
 alter table trab.pessoa
   add constraint pk_pessoa primary key (codigo);
 alter table trab.pessoa
-  add foreign key (cep, numero_res) references trab.endereco(cep,numero_res)
+  add foreign key (cep, numero_res) references trab.endereco(cep,numero)
   on update cascade on delete cascade;
 alter table trab.endereco
   add constraint pk_endereco primary key (cep, numero);
