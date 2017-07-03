@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { 
+	background-image:url(../Imagens/red-wallpaper.jpg)
+	}
+
+div.formulario{ 
+	width:800px; 
+	height:1500px; 
+	background-color:#FFF; 
+	border-style:double; 
+	border-color:#000; 
+	margin-left:300px; 
+	margin-top:20px; 
+	border-radius:10px
+	}
+	
+img {
+	width:400px; 
+	height:120px; 
+	margin-top:15px; 
+	margin-left:200px
+	}
+	
+table.form {
+	margin-top:20px
+	}
+	
+td.fort {
+	width:400px;
+	}
+	
+	p{
+	font-size:24px
+	}
+
+	p.2{
+	font-size:18px
+	}
+	
+td.sub {
+	height:50px;
+	}

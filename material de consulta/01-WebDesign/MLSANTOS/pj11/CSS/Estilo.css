@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { background-image:url(../Imagens/Fundo_Formulario%20-%20C%C3%B3pia.png); background-repeat:no-repeat; background-position:top; background-color:#900}
+div.titleform { height:40px; width:300px; margin-left:705px; padding-left:40px;}
+div.form1 { height:30px; width:300px; margin-left:705px; padding-left:40px; margin-top:-30px; }
+div.form2 { height:30px; width:300px; margin-left:705px; padding-left:40px; margin-top:-15px;}
+div.input { height:22px; width:280px; margin-left:735px; border-style:solid; border-color:#900; margin-top:-10px;}
+div.inputtext { height:100px; width:280px; margin-left:735px; border-style:solid; border-color:#900; margin-top:-11px;}
+p.title { font-family:Arial, Helvetica, sans-serif; color:#F00; font-size:22px}
+p.subtitle { font-family:Arial, Helvetica, sans-serif; color:#F00; font-size:14px}
+textarea { height:95px; width:274px; margin-top:-1px; resize:none}
+div.submit { height:22px; width:280px; margin-left:850px; margin-top:15px;}
+div.obg { height:120px; width:280px; margin-left:735px; margin-top:150px;}
+div.link { height:20px; width:80px; margin-left:125px; margin-top:30px;}

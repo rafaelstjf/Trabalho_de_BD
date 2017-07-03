@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { background-image:url(../Imagens/Blood%20Red%20Eye.jpg); background-repeat:no-repeat;}
+div.enquete { width:350px; height:200px; border-style:solid; border-color:#900; margin-left:1050px; background-color:#000; color:#900}
+td.sub { height:50px;}
