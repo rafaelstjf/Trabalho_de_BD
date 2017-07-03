@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<title>P3</title>
+        <style>
+			table{
+				margin-top:100px;
+				height:200px;
+				width:100px;
+				}
+        	table,tr,td{
+				background-color:#E1F0FF;
+				color:#000;
+			 	border-collapse:collapse;
+				}
+			.contorno{
+				border-style:solid;
+				border-width:thin;
+				border-color:#00F;
+				width:160px;
+				}
+			.botao{
+				background-color:#AAA;
+				font-weight:bold;
+				color:#FFF;
+				border-style:solid;
+				padding:8px;
+				}
+			.botao:hover{
+				background-color:#069;
+				background-clip:border-box;
+				}
+        </style>
+	<script type="text/javascript">
+		function mensagem(){
+			var user=document.getElementById("1").value;
+			var secname=document.getElementById("2").value;
+			var age=document.getElementById("3").value;
+			var email=document.getElementById("4").value;
+			var tel=document.getElementById("5").value;
+			var pass1=document.getElementById("6").value;
+			var pass2=document.getElementById("7").value;
+			
+			var flag=0;
+			
+			for (i=0;i<7;i++){
+				var obj=document.forms[0].elements[i];
+				if(obj.value==""){					
+					obj.style.backgroundColor='#FF666A';
+					flag=1;
+					}
+				else{
+					obj.style.backgroundColor='#6FC';
+					}
+		}
+			if (flag==1){
+				alert("Preencha todos os campos corretamente!");
+				}
+				
+			var senha=document.forms[0].elements[6];
+			
+			if (pass1!=pass2){
+					senha.style.backgroundColor='#FF666A';
+					alert("As senhas nao sao iguais!\n\nDigite as senhas corretamente!");
+				}
+			if ((flag==0) && (pass1==pass2)){
+				alert("Cadastro realizado com sucesso!");		
+				alert("Dados: \n\nNome: "+user+"\nSobrenome: "+secname+"\nIdade: "+age+"\nE-mail: "+email+"\nTelefone: "+tel);
+			}		
+		}
+    </script>
+	</head>
+
+	<body>
+
+    <form name="formVerificar">
+    <table class="contorno_table" align="center" cellpadding="5"> 
+    	<tr>
+        	<td>Nome</td>
+            <td><input class="contorno" type="text" id="1" /></td>
+    	</tr>
+    	<tr>
+        	<td>Sobrenome</td>
+            <td><input class="contorno" type="text" id="2"/></td>
+    	</tr>
+    	<tr>
+        	<td>Idade</td>
+            <td><input class="contorno" type="text" id="3" /></td>
+    	</tr>
+    	<tr>
+        	<td>E-mail</td>
+            <td><input class="contorno" type="email" id="4" /></td>
+    	</tr>
+    	<tr>
+        	<td>Telefone</td>
+            <td><input class="contorno" type="tel" id="5" /></td>
+    	</tr>
+    	<tr>
+        	<td>Senha</td>
+            <td><input class="contorno" type="password" id="6" /></td>
+    	</tr>
+    	<tr>
+        	<td>Repita a Senha</td>
+            <td><input class="contorno" type="password" id="7" /></td>
+    	</tr>
+        <tr>
+            <td colspan="2" align="center"><input
+            class="botao" type="button" value="Cadastrar" onClick="mensagem();" /></td>
+    	</tr>
+    </table>
+    </form>
+        
+	</body>
+</html>

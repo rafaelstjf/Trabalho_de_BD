@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { 
+	background-image:url(../Imagens/red-wallpaper.jpg)
+	}
+
+div.formulario{ 
+	width:800px; 
+	height:3500px;
+	background-color:#FFF; 
+	border-style:double; 
+	border-color:#000; 
+	margin-left:300px; 
+	margin-top:20px; 
+	border-radius:10px
+	}
+	
+img {
+	margin-top:15px; 
+	margin-left:200px
+	}
+	
+table.form {
+	margin-top:20px
+	}
+	
+td.fort {
+	width:400px;
+	}
+		
+td.sub {
+	height:50px;
+	}
+p.title{ 
+	color:#09F; 
+	font-style:italic;
+	}
+p.titlediv{ 
+	color:#039; 
+	font-style:italic;
+	font-size:24px;
+	}
+.botao { 
+			color:#FFF;
+			font-size:16px;
+			background-color:#03C;
+			border-collapse:collapse;
+			border-style:solid;
+			border-width:thin;
+   			height:40px;
+			width:80px;
+	}

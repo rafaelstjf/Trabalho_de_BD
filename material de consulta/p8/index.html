@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Validação Avançada</title>
+
+	<script>
+		function validar(){
+			cont=0;
+			var nome = document.getElementById("nome").value;
+			var numeros = /[0-9]/;
+				if (numeros.test(nome)==false)cont++;
+				
+			var idade = document.getElementById("idade").value;
+			var letras = /[A-z]/;
+				if (letras.test(idade)==false)cont++;
+			
+			var email = document.getElementById("email").value;
+				if((email.indexOf("@")!=-1)&&(email.indexOf(".")!=-1))cont++;
+			
+			var senha = document.getElementById("senha").value;
+				if (senha.length>=8)cont++;
+			
+			if(cont==4) alert("Fomulário preenchido corretamene!\n\n\nCadastro realizado!");
+			else alert("Fomulário preenchido incorretamene!\n\nCadastro não foi realizado!");
+		}
+	</script>
+
+</head>
+
+<body>
+<form>
+<table border="1">
+	<tr>
+    	<td align="right" width="50px">Nome</td>
+        <td><input type="text" id="nome" /></td>
+    </tr>
+    	<td align="right">E-mail</td>
+        <td><input type="email" id="email" /></td>
+	<tr>
+    	<td align="right">Senha</td>
+        <td><input type="password" id="senha" /></td>
+    </tr>
+	<tr>
+    	<td align="right">Idade</td>
+        <td><input type="text" id="idade" /></td>
+    </tr>
+	<tr>
+		<td colspan="2" align="center"><input type="button" value="Cadastrar" onclick="validar();"/></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

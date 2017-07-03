@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+table,tr,td{
+	color:#FFF;
+	border:none;
+	background-color:#03C;
+}
+table{
+	margin-top:200px;
+	height:90px;
+	width:200px;
+}
+.submit{
+	border:none;
+	color:#FFF;
+	background-color:#387AE7;
+}
+.submit:hover{
+	background-color:#78B1EB;
+}

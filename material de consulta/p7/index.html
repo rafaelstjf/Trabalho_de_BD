@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Formulário de Compras</title>
+        <script type="text/javascript" src="JS/script2.js"></script>
+        <link type="text/css" rel="stylesheet" href="CSS/estilo2.css" />
+	</head>
+
+<body>
+	<h2 align="center">Simulador de Compras ON-LINE</h2>
+	<form id="frmCompras" name="frmCompras">
+    	<table class="contornot">
+        	<tr>
+            	<td>Item</td>
+               	<td>Descrição</td>
+                <td>Preço Unitário</td>
+                <td>Quantidade</td>
+                <td>Preço Total</td>
+            </tr>
+            <tr>
+            	<td>01</td>
+               	<td><input type="text" id="desc1" /></td>
+                <td><input type="text" id="preco1" onkeyup="calcularIten();"/></td>
+                <td><input type="text" id="quant1" onkeyup="calcularIten();" /></td>
+                <td><input type="text" id="total1" readonly="readonly" /></td>
+            </tr>
+            	<td>02</td>
+               	<td><input type="text" id="desc2" /></td>
+                <td><input type="text" id="preco2" onkeyup="calcularIten();"/></td>
+                <td><input type="text" id="quant2" onkeyup="calcularIten();"/></td>
+                <td><input type="text" id="total2" readonly="readonly" /></td>
+            </tr> 
+            	<td>03</td>
+               	<td><input type="text" id="desc3" /></td>
+                <td><input type="text" id="preco3" onkeyup="calcularIten();"/></td>
+                <td><input type="text" id="quant3" onkeyup="calcularIten();"/></td>
+                <td><input type="text" id="total3" readonly="readonly" /></td>
+            </tr>
+            	<td>04</td>
+               	<td><input type="text" id="desc4" /></td>
+                <td><input type="text" id="preco4" onkeyup="calcularIten();"/></td>
+                <td><input type="text" id="quant4" onkeyup="calcularIten();"/></td>
+                <td><input type="text" id="total4" readonly="readonly" /></td>
+            </tr>                                  
+            	<td>05</td>
+               	<td><input type="text" id="desc5" /></td>
+                <td><input type="text" id="preco5" onkeyup="calcularIten();"/></td>
+                <td><input type="text" id="quant5" onkeyup="calcularIten();"/></td>
+                <td><input type="text" id="total5" readonly="readonly" /></td>
+            </tr>
+            	<td colspan="2" align="right">Valor Total do Pedido</td>
+               	<td><input type="text" id="valorTotal" /></td>
+                <td>Forma de Pagamento</td>
+                <td>
+                	<select id="parcelas">
+                    	<option value="1">À vista</option>
+                        <option value="3">3x sem juros</option>
+                        <option value="6">6x com juros</option>
+					</select>
+                </td>
+            </tr>
+            <tr>
+            	<td colspan="5" align="center"><input class="botao" type="button" value="Clique aqui para calcular!" onclick="calcularPedido();" /></td>
+            </tr>
+        </table>
+        <br />
+        <table class="contornot">
+                   <tr>                                  
+            	<td colspan="5">Finalizando a compra</td>
+               	
+            </tr>
+            <tr>
+	            <td colspan="2" align="right">Forma de Pagamento</td>
+                <td><input type="text" id="formaPagamento" /></td>
+             </tr>
+             <tr>
+	             <td colspan="2" align="right">Valor da Parcela:</td>
+                <td><input type="text" id="valorParcelas" readonly="readonly" /></td>
+            </tr>  
+       </table>
+    </form>
+</body>
+</html>

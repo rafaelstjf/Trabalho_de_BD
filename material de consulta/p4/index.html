@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<title>P4</title>
+        <style>
+			table{
+				margin-top:100px;
+				height:150px;
+				width:350px;
+				}
+        	table,tr,td{
+				background-color:#666;
+				color:#FFF;
+			 	border-collapse:collapse;
+				}
+			.contorno{
+				border-style:solid;
+				border-width:thin;
+				border-color:#C60;
+				width:250px;
+				}
+			.botao{
+				background-color:#F60;
+				font-weight:bold;
+				color:#FFF;
+				border-style:solid;
+				padding:8px;
+				}
+			.botao:hover{
+				background-color:#C30;
+				background-clip:border-box;
+				}
+        </style>
+	<script type="text/javascript">
+		function mensagem(){
+			var n1=parseInt(document.getElementById("A1").value);
+			var n2=parseInt(document.getElementById("A2").value);
+			var calc=document.getElementById("A3");
+			var divid=document.getElementById("A4");
+			calc.value=(n1+n2);
+			if (n2==0) {divid.value=("Nao existe divisao por zero!");}
+			else {divid.value=(n1/n2);}
+
+		}
+		function mensagem2(){
+			var m1=parseInt(document.getElementById("B1").value);
+			var m2=parseInt(document.getElementById("B2").value);
+			var divid=document.getElementById("B3");
+			if (m2<=0) {divid.value=("Nao existe divisao por zero!");}
+			else {divid.value=(m1/m2);}
+		}
+    </script>
+	</head>
+
+	<body>
+
+    <form name="formVerificar">
+    <table class="contorno_table" align="center" cellpadding="5"> 
+    	<tr>
+        	<td>N1</td>
+            <td><input class="contorno" type="text" id="A1" /></td>
+    	</tr>
+    	<tr>
+        	<td>N2</td>
+            <td><input class="contorno" type="text" id="A2"/></td>
+    	</tr>
+        <tr>
+        	<td>Soma</td>
+            <td><input class="contorno" type="text" id="A3"/></td>
+    	</tr>
+        <tr>
+        	<td>Quociente</td>
+            <td><input class="contorno" type="text" id="A4"/></td>
+    	</tr>
+	   <tr>
+            <td colspan="2" align="center"><input
+            class="botao" type="button" value="Calcular" onClick="mensagem();" /></td>
+    	</tr>
+    </table>
+    </form>
+        
+	</body>
+</html>

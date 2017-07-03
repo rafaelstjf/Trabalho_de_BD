@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="CSS/estilo.css"/>
+<title>P6</title>
+<script type="text/javascript">
+    var p1;
+    var p2;
+    var valor;
+    var saida;
+	var op;
+	var n;
+    function calc(valor){
+        saida=document.getElementById("tela");
+        saida.value+=valor;
+        }
+    function operacao(valor){
+		op=valor;
+        p1=parseInt(document.getElementById("tela").value);
+		document.getElementById("tela").value="";
+        }
+
+    function resultado(){
+        p2=parseInt(document.getElementById("tela").value);
+		if (op==0){
+			n=p1+p2;
+			}
+		if (op==1){
+			n=p1-p2;
+			}
+		document.getElementById("tela").value=n;
+        }
+    function limpar(){
+        document.getElementById("tela").value="";
+        n=0;
+        }
+</script>
+</head>
+
+<body>
+<table border="1">
+  <tr>
+    <td colspan="4"><input align="right" type="text" readonly="readonly" id="tela" /></td
+    >
+  </tr>
+  <tr>
+    <td align="center"><input class="botao" type="button" onclick="calc(this.value);" value="7" /></td>
+    <td align="center"><input class="botao" type="button" onclick="calc(this.value);" value="8" /></td>
+    <td align="center"><input class="botao" type="button" onclick="calc(this.value);" value="9" /></td>
+    <td align="center"><input class="botao" type="button" onclick="operacao(0);" value="+" /></td>
+  </tr>
+  <tr>
+    <td align="center"><input class="botao" type="button" onclick="calc(this.value);" value="4" /></td>
+    <td align="center"><input class="botao" type="button" onclick="calc(this.value);" value="5" /></td>
+    <td align="center"><input class="botao" type="button" onclick="calc(this.value);" value="6" /></td>
+    <td align="center"><input class="botao" type="button" onclick="operacao(1);" value="-" /></td>
+  </tr>
+  <tr>
+    <td align="center"><input class="botao" type="button" onclick="calc(this.value);" value="1" /></td>
+    <td align="center"><input class="botao" type="button" onclick="calc(this.value);" value="2" /></td>
+    <td align="center"><input class="botao" type="button" onclick="calc(this.value);" value="3" /></td>
+    <td align="center"><input class="botao" type="button" onclick="resultado();" value="=" /></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="3"><input class="zero" type="button" onclick="calc(this.value);" value="0" /></td>
+    <td align="center"><input class="botao" type="button" onclick="limpar();" value="C" /></td>
+  </tr>
+</table>
+</body>
+</html>

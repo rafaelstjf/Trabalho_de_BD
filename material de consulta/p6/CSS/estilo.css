@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+table{
+	background-color:#09F;
+	border:medium;
+	border-color:#000;
+	}
+td,tr{
+	border:none;
+}
+.botao { 	
+	background-color:#CCC;
+	color:#FFF;
+	border:none;
+	font-weight:bold;
+	width:30px;
+	}
+.zero { 
+	background-color:#CCC;
+	color:#FFF;
+	border:none;
+	font-weight:bold;
+	width:105px;
+	}

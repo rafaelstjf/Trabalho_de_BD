@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+	h2{
+		font-family:Arial;
+		font-size:20px;		
+		color:#036;
+	}
+	
+	p{
+		font-family:Arial;
+		font-size:18px;
+	}
+	table,tr,td{
+		left:50%;
+		border-radius:10px;
+		margin-left:400px;
+		font-family:Arial;
+		font-size:15px;
+		color:#FFF;
+		background-color:#036;
+		height:25px;
+	}
+	.contornot{
+		border-style:solid;
+		border-width:3px;
+		border-color:#000;
+	}
+	.botao{
+		font-family:Arial;
+		font-size:15px;
+		color:#FFF;
+		border:none;
+		background-color:#06F;
+		height:30px;
+	}
+	.botao:hover{
+		color:#000;
+		background-color:#CCC;
+	}

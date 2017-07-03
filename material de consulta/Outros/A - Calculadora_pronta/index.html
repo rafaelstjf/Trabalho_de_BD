@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>.:: CALCULADORA ::.</title>
+<style>
+#botao {
+	background-color:#66CCFF;
+	width:40px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	border:1px solid #333333;
+	cursor:pointer;
+}
+
+.text {
+	width:168px;
+	text-align:right;
+	background-color:#D9EEF9;
+	font-weight:bold;
+}
+.style1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#ajuda {
+	width:400px;
+	height:300px;
+	margin:0 auto;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+}
+</style>
+
+<script>
+	/* Desenvolvido por		: Edimilson Sousa Quelipe
+	 * Data 			: 10/10/2009
+	 * Contatos			: quelipe_@hotmail.com.br, quelipe1@uol.com.br, www.quelipe.com.br
+	
+	*/
+	function calc(valor) {
+		
+		s = document.getElementById('res').value;
+		document.getElementById('res').value = s + valor;
+	}
+	
+	function sinal(oper) {
+		si = document.getElementById('res').value;
+		document.getElementById('res').value = si + oper + " ";
+	}
+	
+	function calcula() {
+		vet = document.getElementById('res').value;
+		vet2 = vet.split(' ');
+		switch(vet2[1]) {
+			case 'X':
+				resultado = vet2[0] * vet2[2];
+				break;
+			case '÷':
+				resultado = vet2[0] / vet2[2];
+				break;
+			case '+':
+				resultado = parseFloat(vet2[0]) + parseFloat(vet2[2]);
+				break;
+			case '-':
+				resultado = vet2[0] - vet2[2];
+				break;
+			case "v":
+				resultado = Math.sqrt(vet2[0]);
+				break;
+			case 'Log':
+				resultado = Math.LOG10E*Math.log(vet2[0]);
+				break;
+			case '^':
+				resultado = Math.pow(vet2[0], vet2[2]);
+				break;
+
+		}
+		document.getElementById('res').value = resultado;
+		return true;
+	}
+	
+	function limpa() {
+		document.getElementById('res').value = "";
+	}
+	
+	function porcento() {
+		vet = document.getElementById('res').value;
+		vet2 = vet.split(' ');
+		if(vet2[1] == 'X')
+			document.getElementById('res').value = (vet2[0] * vet2[2])/100;
+		else if(vet2[1] == '+')
+			document.getElementById('res').value = parseFloat((vet2[0] * vet2[2])/100) + parseFloat(vet2[0]);
+		else if(vet2[1] == '-')
+			document.getElementById('res').value = parseFloat(vet2[0]) - parseFloat((vet2[0] * vet2[2])/100);
+	}
+
+	// função apenas para gerar o help da calculadora
+	function help() {
+		document.getElementById('ajuda').innerHTML = "<u>Para as operações básicas usa-se da seguinte forma:</u> <br>"  
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: 3 + 2 = 5 <br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: 3 - 2 = 1 <br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: 3 x 2 = 6 <br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: 3 &divide; 2 = 1.5 <br>"
+							   + "<u>Para operações de porcentagem:</u><br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: 25 x 10 % = 2.5 <br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: 25 + 10 % = 27.5 <br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: 25 - 10 % = 22.5 <br>"
+							   + "<u>Para logaritmo:</u> <br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: 2 log = 0.3010...<br>"
+							   + "<u>Para raiz quadrada:</u> <br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: 16 &radic;&macr; = 4 <br>"
+							   + "<u>Potenciação:</u> <br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: 2 x² 2 = 4 <br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: 2 x³ 3 = 8 <br><br>"
+							   + "<u>OBS: Essa versão ainda não calcula expressão linear como nos ex:</u> <br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 + 5 + 2 x 2 <br>"
+							   + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 + 2 - 7 &divide; 2";
+													  
+		setTimeout("limpaajuda()",15000);
+	}
+	function limpaajuda() {
+		document.getElementById('ajuda').innerHTML = "";
+	}
+</script>
+
+
+</head>
+
+<body>
+
+<table width="203" height="269" border="9" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="186" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="97"><span class="style1">Quelipe</span></td>
+          <td width="89" class="style1">Ver 1.2  Beta</td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr valign="top">
+    <td bgcolor="#EFEFEF"><br />
+      <table width="159" border="0" align="center">
+      <tr>
+        <td height="33" colspan="4"><label><input name="res" type="text" id="res" size="20" class="text" disabled="disabled"/></label></td>
+      </tr>
+      <tr>
+        <td><label><input type="button" name="button15" value="%" id="botao" onclick="porcento()"/></label></td>
+        <td><label><input type="button" name="button17" value="&radic;&macr;" id="botao" onclick="sinal(' v');"/></label></td>
+        <td><label><input type="button" name="button18" value="Log" id="botao" onclick="sinal(' Log');"/></label></td>
+        <td><input type="button" name="button19" value="X&sup2;" onclick="sinal(' ^');" id="botao" /></td>
+      </tr>
+      <tr>
+        <td width="38"><label><input type="button" name="button" value="7" onclick="calc('7');" id="botao" accesskey="7"/></label></td>
+        <td width="36"><input type="button" name="button2" value="8" onclick="calc('8');" id="botao"/></td>
+        <td width="36"><input type="button" name="button3" value="9" onclick="calc('9');" id="botao"/></td>
+        <td width="24"><input type="button" name="button4" value="&divide;" onclick="sinal(' &divide;');" id="botao"/></td>
+      </tr>
+      <tr>
+        <td><input type="button" name="button5" value="4" onclick="calc('4');" id="botao"/></td>
+        <td><input type="button" name="button6" value="5" onclick="calc('5');" id="botao"/></td>
+        <td><input type="button" name="button7" value="6" onclick="calc('6');" id="botao"/></td>
+        <td><input type="button" name="button8" value="x" onclick="sinal(' X');" id="botao"/></td>
+      </tr>
+      <tr>
+        <td><input type="button" name="button9" value="1" onclick="calc('1');" id="botao"/></td>
+        <td><input type="button" name="button10" value="2" onclick="calc('2');" id="botao"/></td>
+        <td><input type="button" name="button11" value="3" onclick="calc('3');" id="botao"/></td>
+        <td><input type="button" name="button16" value="- " onclick="sinal(' -');" id="botao"/></td>
+      </tr>
+      <tr>
+        <td><label><input type="button" name="button13" value="CE" onclick="limpa()" id="botao"/></label></td>
+        <td><input type="button" name="button14" value="0" onclick="calc('0');" id="botao"/></td>
+        <td><input type="submit" name="Submit162" value="=" onclick="calcula()" id="botao"/></td>
+        <td><input type="button" name="button12" value="+" onclick="sinal(' +');" id="botao"/></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><label><input type="submit" name="Submit" value="." id="botao" onclick="calc('.');"/></label></td>
+        <td><label><input type="submit" name="Submit2" value="Help" id="botao" onclick="help();"/></label></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+	</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<div id="ajuda">
+&nbsp;
+</div>
+</body>
+</html>

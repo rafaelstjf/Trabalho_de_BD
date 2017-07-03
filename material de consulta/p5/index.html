@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+        <title>P5</title>
+        <link rel="stylesheet" type="text/css" href="CSS/estilo.css" />
+        <script type="text/javascript">
+		var gabarito = new Array(0,1,1,2,2,1,2,1,1,0);
+		
+			function corrigir(){
+				var cont=0;
+				var opEscolhida;
+				for(i=0;i<=9;i++){
+					for(j=0;j<=3;j++){
+						var obj=document.forms[i].elements[j];
+						if (obj.checked==true){
+							if (j==gabarito[i]){
+							cont++;
+							}
+						}
+					}
+
+				}
+				if(cont>=6) {
+					alert("\n   RESULTADO DA PROVA\n\nParabéns, você foi aprovado. \n\n Sua nota foi: "+cont);
+					}
+					else{
+					alert("\n   RESULTADO DA PROVA\n\nInfelizmente você foi reprovado. \n\n Sua nota foi: "+cont);						
+					}
+			}
+        </script>
+	</head>
+    
+	<body bgcolor="#0099CC">
+    <div class="formulario">
+    <p class="titlediv" align="center">Prova Classificatória</p>
+    <br />
+    <form>
+    <p class="title">1.	Quais tags são necessários para criar um formulário HTML de acordo com a imagem abaixo:</p>
+    <img src="Imagens/planilha.png" height="350"/><br />
+    <input type="radio" name="Q1" />&lt;form&gt;, &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;input&gt; <br />
+    <input type="radio" name="Q1" />&lt;form&gt;, &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;ol&gt;<br />
+    <input type="radio" name="Q1" />&lt;form&gt;, &lt;table&gt;, &lt;ts&gt;, &lt;tw&gt;, &lt;ol&gt;<br />
+    <input type="radio" name="Q1" />&lt;form&gt;, &lt;table&gt;, &lt;a&gt;, &lt;br&gt;, &lt;ul&gt;<br /><br /><br />
+    </form><hr />
+    
+    <form>
+    <p class="title">2.	Como se declara uma variável em Java script?</p>
+    <input type="radio" name="Q2" />Marcelo char [50];<br />
+    <input type="radio" name="Q2" />Var nome= "Marcelo";<br />
+    <input type="radio" name="Q2" />Nome= "%d Marcelo";<br />
+    <input type="radio" name="Q2" />"Marcelo" %d= var;<br /><br /><br />
+    </form><hr />
+    
+    <form>
+    <p class="title">3.	Em quais pontos o Java script pode ser inserido na pagina?</p>
+    <input type="radio" name="Q3" />Dentro da tag &lt;Head&gt;&lt;/Head&gt; apenas;<br />
+    <input type="radio" name="Q3" />Em qualquer ponto. Desde que seja dentro da tag &lt;HTML&gt;&lt;/HTML&gt;;<br />
+    <input type="radio" name="Q3" />Dentro da tag &lt;body&gt;&lt;/body&gt; apenas;<br />
+    <input type="radio" name="Q3" />Entre as tags &lt;Head&gt;&lt;/Head&gt; e &lt;body&gt;&lt;/body&gt; apenas;<br /><br /><br />
+    </form><hr />
+    
+    <form>
+    <p class="title">4.	Sobre o script a seguir:</p>
+
+    	<p>&lt;script type="text/javascript"&gt;</p>    
+        <blockquote>
+		<p>		var n1= parseInt(window.prompt("Informe o primeiro numero","numero 1"));</p>
+		<p>		var n2= parseInt(window.prompt("Informe o segundo numero","numero 2"));</p>
+		<p>		var soma=n1+n2;</p>
+	    <p>		document.write("Primeiro Numero:",n1,"&lt;br&gt;");</p>
+		<p>		document.write("Segundo Numero:",n2,"&lt;br&gt;");</p>
+		<p>		document.write("Soma:",soma);</p>	
+        </blockquote>
+		<p>&lt;/script&gt;</p><br />
+
+    <input type="radio" name="Q4" />Mostra em tela a soma de N1 + N2;<br />
+    <input type="radio" name="Q4" />Mostra em tela quantos números foram utilizados;<br />
+    <input type="radio" name="Q4" />Lê dois números do usuário, mostra em tela os números e a soma dos mesmos;<br />
+    <input type="radio" name="Q4" />Nenhuma das alternativas acima.<br /><br /><br />
+    </form><hr />
+    
+    <form>
+    <p class="title">5.	Se usarmos elementos de C++ em Java Script, como IF, FOR, ou ELSE, qual erro seria resultante dessa tentativa?</p>
+    <input type="radio" name="Q5" />Geraria um erro de Sintaxe e a página não carregaria;<br />
+    <input type="radio" name="Q5" />O cabeçalho do código geraria um erro e mostraria uma mensagem no prompt;<br />
+    <input type="radio" name="Q5" />Não ocorreriam erros, pois essas expressões também são utilizadas nessa linguagem;<br />
+    <input type="radio" name="Q5" />O computador reiniciaria por causa da incompatibilidade de códigos.<br /><br /><br />
+    </form><hr />
+    
+    <form>
+    <p class="title">6.	Sobre Html, o comando para você mesclar as colunas e as linhas é:</p>
+    <input type="radio" name="Q6" />Colspan para mesclar linhas e Rowspan para mesclar colunas;<br />
+    <input type="radio" name="Q6" />Rowspan para mesclar linhas e Colspan para mesclar colunas;<br />
+    <input type="radio" name="Q6" />Td para mesclar linha e Tr para mesclar coluna;<br />
+    <input type="radio" name="Q6" />Tr para mesclar linha e Td para mesclar coluna.<br /><br /><br />
+    </form><hr />
+   	
+    <form>
+    <p class="title">7.	O comando Java Script  abaixo mostra na tela:</p>
+    <p>&lt;script type="text/javascript"&gt;</p>
+    <blockquote>
+		<p>function n(){</p>
+		<p>var nome = document.getElementById("n").value;</p>
+		<p>var sobrenome = document.getElementById("s").value;</p>
+		<p>alert(nome+sobrenome);</p>
+	<p>}</p>
+    </blockquote>
+	<p>&lt;/script&gt;</p><br />
+
+    <input type="radio" name="Q7" />Cria uma variável "n" que recebe a concatenação das variáveis nome e sobrenome;<br />
+    <input type="radio" name="Q7" />Cria uma função com nome "function" que recebe a variável n;<br />
+    <input type="radio" name="Q7" />Cria uma função com o nome "n"  que irá mostrar na tela um alerta com a concatenação das variáveis nome e sobrenome;<br />
+    <input type="radio" name="Q7" />Cria uma função com nome "n" que irá apenas gravar nas variáveis nome e  sobrenome  o valor dos compos  n e s.<br /><br /><br />
+    </form><hr />
+    
+    <form>
+    <p class="title">8.	Analise o código e responda a pergunta</p>
+   	<p>&lt;html&gt;</p>
+    <blockquote>
+		<p>&lt;head&gt;</p>
+		<p>&lt;title&gt;Questão 01&lt;/title&gt;</p>
+    	<p>&lt;style&gt;</p>
+        </blockquote>
+        <blockquote><blockquote>
+			<p>p{color:red}</p>
+        </blockquote></blockquote>
+    	<p>&lt;/style&gt;</p>
+		<p>&lt;/head&gt;</p><br />
+		<blockquote>	
+		<p>&lt;body bgcolor="black" text="white"&gt;</p>
+        </blockquote>
+        <blockquote><blockquote>
+	    		<p>&lt;p&gt;Bem-Vindo ao Senai&lt;/p&gt;</p>
+        </blockquote></blockquote>
+        <blockquote>
+		<p>&lt;/body&gt;</p>
+        </blockquote>
+	<p>&lt;/html&gt;</p> 
+	<br />
+	<p>Como será a página que aparecerá no browser?</p>
+
+    <input type="radio" name="Q8" />Com fundo branco e texto preto;<br />
+    <input type="radio" name="Q8" />Com fundo preto e texto vermelho;<br />
+    <input type="radio" name="Q8" />Com fundo branco e texto vermelho;<br />
+    <input type="radio" name="Q8" />N.R.A.<br /><br /><br />
+    </form><hr />
+    
+    <form>
+    <p class="title">9.	Qual o comando que transforma uma variável para inteiro?</p>
+    <input type="radio" name="Q9" />parseFloat;<br />
+    <input type="radio" name="Q9" />parseInt;<br />
+    <input type="radio" name="Q9" />parseNum;<br />
+    <input type="radio" name="Q9" />parseSet.<br /><br /><br />
+    </form><hr />
+    
+    <form>
+    <p class="title">10.	O comando abaixo:</p>
+    <p>&lt;input type = "button" on click = "msg(); "value= "Enviar"/&gt;</p>
+    <input type="radio" name="Q10" />Chama uma determinada função quando o usuário clicar no botão para enviar seus dados;<br />
+    <input type="radio" name="Q10" />Redireciona o usuário para uma outra pagina da web;<br />
+    <input type="radio" name="Q10" />Executa um alerta Java;<br />
+    <input type="radio" name="Q10" />Inicia a função "msg".<br /><br /><br />
+    </form><hr />
+    
+    
+
+	<table width="100%">
+    	<tr>
+    		<td align="center"><input class="botao" type="button" value="Corrigir" onclick="corrigir();"/></td>
+        </tr>
+    </table>
+	</div>
+	</body>
+</html>

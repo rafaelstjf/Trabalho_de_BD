@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+h2{
+	color:#0F0;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+body{
+	background:#000;
+}
+
+table{
+	height:100px;
+	background-color:#000;
+	color:#0F0;
+	border:none;
+	left:50%;
+	margin-left:400px;	
+}
+
+tr,td{
+	background-color:#000;
+	color:#0F0;
+	border:none;
+	left:50%;
+	margin-left:400px;
+}
+input,select{
+	border-color:#0F0;
+	border-width:1px;
+	background-color:#000;
+	color:#0F0;
+}
