@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background-image:url(../Imagens/Opera-Background-Speaker.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	color:#F00
+	}
+p
+	{
+	font-size:24px;
+	font-family:"Comic Sans MS", cursive
+	}
+
+div.a
+	{ 
+	width: 1250px;
+	height: 768px;
+	left:10%; 
+	margin-left:85px; 
+	background-color:transparent; 
+	margin-top:10px;
+	}
+
+img.gd
+	{
+	margin-left:100px;
+	width: 1024px;
+	height: 570px;	
+	}
+
+img.mini
+	{
+	margin-top:10px;
+	margin-left:100px;
+	width: 176px;
+	height: 100px;	
+	}
+img.titulo
+	{
+	margin-left:300px;
+	}

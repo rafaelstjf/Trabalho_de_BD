@@ -1,0 +1,152 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+	background-image:url(../Imagens/background.png);
+	background-size:cover;
+}
+
+div.principal
+{   
+	left:50%;
+	background-color:#FFF;
+	height:879px;
+	width:800px;
+	position:absolute;
+	margin-left:-400px;
+ 	margin-top:20px;
+}
+div.conteudo
+{
+	margin-top:20px;
+	margin-left:210px;
+	background-color:#FFF;
+	height:600px;
+	width:550px;
+}
+div.titulo
+{   
+	background-color:#000;
+	height:160px;
+	width:800px;
+}
+div.linksgd
+{
+	width:188px;
+	background-color:#FFF;	
+	height:635px;
+}
+div.contatos
+{   
+	background-color:#620000;
+	height:10px;
+	width:800px;
+	margin-top:-25px;
+}
+table.links
+{
+	margin-top:-618px;
+	margin-left:2px;
+	width:188px;
+	height:626px;
+}
+td.lk
+{
+	height:60px;
+	width:188px;
+	background:url(../Imagens/Bot%C3%A4es.png);
+	background-repeat:no-repeat;
+	border-collapse:collapse;
+}
+td.lk:hover
+{
+	height:60px;
+	width:188px;
+	background-image:url(../Imagens/Bot%C3%A4es_Efeito.png);
+	background-repeat:no-repeat;
+	border-collapse:collapse;
+
+}
+p.txt
+{
+	color:#000;
+	margin-top:13px;
+	font-size:24px;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+a.lk1
+{ 
+	text-decoration:none
+}
+p.contat
+{
+	color:#000;
+	margin-top:-5;
+	font-size:18px;
+	margin-left:15px;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+p.conteudo
+{
+	color:#000;
+	margin-right:10px;
+	margin-left:10px;
+	margin-top:15px;
+	font-size:21px;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+img.peq
+{
+	margin-right:10px;
+	margin-top:6px;
+}
+img.galrgd
+{
+	height:400px;
+	width:548px;
+}
+
+img.galr
+{
+	height:70px;
+	width:85px;
+}
+table.cursos
+{
+	height:500px;
+}
+p.cursosn
+{
+	color:#FFF;
+	margin-right:10px;
+	margin-left:10px;
+	margin-top:15px;
+	font-size:15px;
+	font-weight:bold;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+p.conteudo2
+{
+	color:#FFF;
+	margin-right:10px;
+	margin-left:10px;
+	margin-top:15px;
+	font-size:21px;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+td.cursos:hover
+{
+	color:#FFF;
+	background-color:#9D0000;
+}
+a.cursos
+{
+	text-decoration:none;
+	color:#00F;
+}
+a.cursos:visited
+{
+	text-decoration:none;
+	color:#00F;
+}

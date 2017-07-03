@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background-color:#CCC; color:#000}
+
+table{ margin-left:530px ; left:50% ; border-color:#000; background-color:#FFF;}
+
+p{ text-align:center; font-size:36px}
+
+td { color:#FFF; border-color:#000; border-collapse:collapse}
+
+td.principal{ background-color:#666}
+
+td.azul { color:#069}
+
+td.verde { color:#093}
+
+td.vermelho { color:#F00}

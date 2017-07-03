@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background-image:url(../Imagens/abstract-blue-wallpaper-hd.jpg);}
+div.folha{ width:900px; height: 1000px; left:50%; margin-left:250px; background-color:#FFF; margin-top:30px;}
+div.folhaprodutos{ width:900px; height: 3340px; left:50%; margin-left:250px; background-color:#FFF; margin-top:30px;}
+div.logo{ width:894px; height:150px; background-color:#000; border-color:#FFF; border-style:inset}
+div.tabela{ width:900px; height:50px; background-color:#FFF;}
+img { width:894px; height:150px;}
+img.parceiros { width:150px;height:100px; margin-top:30px}
+img.produtos { width:350px;height:350px;}
+table.links { background-color:#FFF; width:900px; height:50px; border:thin}
+td.padrao { height:75px;width:300px}
+td.links { background-color:#000; border-collapse:collapse} 
+td.links:hover { background-color:#00B0F0; border-collapse:collapse}
+td.links:visited { background-color:#00B0F0; border-collapse:collapse}
+a { text-decoration:none}
+p { color:#000; text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:24px; font-style:inherit}
