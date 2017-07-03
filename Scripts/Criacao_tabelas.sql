@@ -1,4 +1,4 @@
-create SCHEMA trab
+create SCHEMA trab;
 create table trab.pessoa(
   codigo varchar(10) not NULL UNIQUE,
   cpf varchar(11) NULL,
