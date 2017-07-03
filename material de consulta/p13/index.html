@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Lojas Um Click</title>
+        <link href='http://fonts.googleapis.com/css?family=Faster+One|Iceland' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <script src="Script/script.js"></script>
+	</head>
+
+	<body background="Imagens/background.jpg">
+    <div class="inicial">
+    <table class="tabela_home" align="center">
+    	<tr>
+        	<td><a href="index.html"><img src="Imagens/LOJA.png" width="390"/></a></td>
+         </tr>
+         <tr>
+            <td><p align="center" class="Samsung">Revendedora oficial Samsung</p></td>
+        </tr>
+    </table>
+	    <p align="center">É necessário fazer login para entrar na página de compras</p>
+		<form name="login" action="validar.php" method="post">
+        	<table class="tabela_home" align="center">
+            	<tr>
+                	<td>Usuário:</td>
+                	<td><input class="input" type="text" name="userP" id="userJ"/></td>
+                </tr>
+                <tr>
+                	<td>Senha:</td>
+                    <td><input class="input" type="password" name="passP" id="passJ" /></td>
+                </tr>
+                <tr>
+                	<td align="center" colspan="2"><input class="button" type="button" value="Entrar" onclick="verificar();"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+	</body>
+</html>

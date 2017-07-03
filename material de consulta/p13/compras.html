@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Lojas Um Click</title>
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<body background="Imagens/background.jpg">
+<div class="a">
+<form name="compras" method="post" action="calcular.php">
+<table align="center" cellpadding="5">
+	<tr align="center">
+    	<td colspan="5"><a href="index.html"><img src="Imagens/LOJA.png" width="390"/></a></td>
+    </tr>
+    <tr align="center">
+    	<td colspan="5"><p class="Samsung">Nossos produtos:</p></td>
+    </tr>
+	<tr align="center">
+    	<td><p class="titulo">Produto</p></td>
+        <td><p class="titulo">Nome</p></td>
+    	<td><p class="titulo">Descrição</p></td>
+    	<td><p class="titulo">Preço</p></td>
+    	<td><p class="titulo">Quantidade<br />Desejada</p></td>
+    </tr>
+	<tr>
+    	<td><img src="Imagens/1.jpg" width="150" height="150" /></td>
+    	<td>Galaxy S Duos</td>
+        <td>Baseado no sucesso do Galaxy S da Samsung,<br />o novo Galaxy S Duos<br />possue um estilo e design sofisticados,<br />alta performance e incrível usabilidade<br />com a conveniência do Dual Chip!<br />Sistema Operacional: Android 4.0</td>
+   		<td>R$1400,00</td>
+   		<td><input class="quant" type="text" name="p1"/></td>
+  </tr>
+	<tr>
+    	<td><img src="Imagens/2.jpg" width="150" height="150" /></td>
+    	<td>Galaxy Ace Duos</td>
+        <td>O Samsung Galaxy Ace Duos funciona com dois<br />Sim Cards ao mesmo tempo.<br /> Com ele você pode estar conectado<br /> com seus amigos e com o trabalho<br /> em um único aparelho.<br />Sistema Operacional: Android 2.3</td>
+   		<td>R$1100,00</td>
+   		<td><input class="quant" type="text" name="p2"/></td>
+  </tr>
+	<tr>
+    	<td><img src="Imagens/3.jpg" width="150" height="150" /></td>
+    	<td>Galaxy Y Duos</td>
+        <td>Galaxy Y Duos é ideal para trabalho e diversão. O novo Galaxy Y Duos <br />para além de permitir ter 2 cartões<br /> no mesmo telemóvel é um smartphone.<br /> Com um design fantástico e ergonómico,<br /> uma estrutura metálica polida de 11,98 mm e um ecrã táctil 3,14".</td>
+   		<td>R$700,00</td>
+   		<td><input class="quant" type="text" name="p3"/></td>
+  </tr>
+	<tr>
+    	<td><img src="Imagens/4.jpg" width="150" height="150" /></td>
+    	<td>Galaxy S II</td>
+        <td>Com o Galaxy S II você tem o Android 2.3,<br /> a qualidade da câmera de 8 MP<br /> e a câmera frontal de 2 MP.<br /> Além disso um processador Dual Core de 1.2 Ghz, Internet 3G de alta velocidade,<br /> tem a velocidade do Wi-Fi Dual Channel<br /> e desfruta seus vídeos em<br /> Full HD numa tela de 4.27" </td>
+   		<td>R$1700,00</td>
+   		<td><input class="quant" type="text" name="p4"/></td>
+  </tr>
+	<tr>
+    	<td><img src="Imagens/5.jpg" width="150" height="150" /></td>
+    	<td>Galaxy S III</td>
+        <td>Sistema Operacional: Android 4.0, <br />Tela: Tecnologia HD Super AMOLED,<br /> Tamanho 4.8", Resolução 1280 x 720;</br> Câmera: 8.0 MP </td>
+   		<td>R$2100,00</td>
+   		<td><input class="quant" type="text" name="p5"/></td>
+  </tr>
+  <tr>
+  		<td align="center" colspan="5">Tipo de frete:
+        <select class="select" name="frete">
+        	<option value="20">Normal (R$20,00)</option>
+          	<option value="50">Expresso (R$50,00)</option>
+        </select></td>
+  </tr>
+  <tr>
+  		<td align="center" colspan="5"><input class="button2" type="submit" value="Calcular compra"/></td>
+  </tr>
+</table>
+</form>
+</div>
+</body>
+</html>

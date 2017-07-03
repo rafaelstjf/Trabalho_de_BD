@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login com BD</title>
+<link rel="stylesheet" type="text/css" href="CSS/style.css" />
+<script type="text/javascript" src="JS/script.js"></script>
+</head>
+
+<body>
+<table class="table" align="center">
+<form name="login" method="post" action="consultaBD.php">
+	<tr>
+	    <td align="center" colspan="2">Verificação de login</td>
+    </tr>
+    <tr>
+    	<td>Login</td>
+        <td><input type="text" name="nome" id="user"/></td>
+    </tr>
+    <tr>
+    	<td>Senha</td>
+        <td><input type="password" name="senha" id="pass"/></td>
+    </tr>
+    <tr>
+    	<td align="center" colspan="2"><input class="button" value="Verificar" type="button" onclick="validar();"/></td>
+    </tr>
+</form>
+</table>
+
+</body>
+</html>

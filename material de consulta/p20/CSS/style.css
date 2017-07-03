@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+.table{
+	width:200px;
+	height:120px;
+	margin-top:50px;
+	color:#FFF;
+	background-color:#AAA;
+}
+.table2{
+	width:200px;
+	height:180px;
+	margin-top:50px;
+	color:#FFF;
+	background-color:#AAA;
+}
+.button{
+	border:none;
+	background-color:#03C;
+	color:#FFF;
+}
+.button:hover{
+	background-color:#06F;
+	color:#FFF;
+}
+a{
+	text-decoration:none;
+}

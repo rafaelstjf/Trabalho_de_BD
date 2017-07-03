@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Crie seu próprio loop!!</title>
+<link rel="icon" type="image/png" href="Imagens/arrow_circle_right.png" />
+<link rel="stylesheet" type="text/css" href="Style/style.css"/>
+<script type="text/javascript" src="Script/script.js"></script>
+</head>
+
+<body>
+<form name="loop" action="loop.php" method="post">
+<table>
+	<tr>
+    	<td colspan="2" align="center">Personalize seu loop!</td>
+    </tr>
+	<tr>
+    	<td>Início:</td>
+        <td><input type="text" name="inicio" id="1"/></td>
+    </tr>
+	<tr>
+    	<td>Fim</td>
+        <td><input type="text" name="fim" id="2"/></td>
+    </tr>
+	<tr>
+    	<td>Passo</td>
+        <td><input type="text" name="passo" id="3"/></td>
+    </tr>
+	<tr>
+    	<td>Método</td>
+        <td>
+        <select name="metodo">
+        	<option value="1">FOR</option>
+        	<option value="2">WHILE</option>
+        	<option value="3">DO-WHILE</option>
+        </select>
+        </td>
+    </tr>
+	<tr>
+    	<td align="center" colspan="2"><input class="button" type="button" value="Criar" onclick="verificar();"/></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

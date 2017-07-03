@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+
+.inicial{
+	background-color:white;
+	border-radius:10px;
+	left:50%;
+	margin-left:500px;
+	margin-top:80px;
+	height:550px;
+	width:400px;
+}
+.tabela_home{
+	margin-top:20px;
+}
+.Samsung{
+	color:#00C;
+ 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:28px;
+}
+.error{
+	font-family:"Times New Roman", Times, serif;
+	font-size:24px;
+	color:#C00;
+	text-decoration:blink;
+}
+.pág_error{
+	font-family:"Times New Roman", Times, serif;
+	font-size:36px;
+}
+.a4{
+	background-color:white;
+	border-radius:10px;
+	left:50%;
+	margin-left:390px;
+	height:850px;
+	width:595px;
+}
+.a{
+	background-color:white;
+	border-radius:10px;
+	left:50%;
+	margin-left:300px;
+	height:1220px;
+	width:800px;
+}
+.titulo{
+	color:#00C;
+ 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:20px;
+}
+.input{
+	border-color:#06C;
+}
+.quant{
+	margin-left:30px;
+	border-color:#06C;
+	width:45px;
+}
+.button{
+	height:20px;
+	width:80px;
+	margin-top:10px;
+	color:#FFF;
+	background-color:#06C;
+	border:none;
+}
+.button:hover{
+	background-color:#09F;
+}
+.button2{
+	height:30px;
+	width:120px;
+	margin-top:10px;
+	color:#FFF;
+	background-color:#06C;
+	border:none;
+}
+.button2:hover{
+	background-color:#09F;
+}
+.select{
+	border-color:#06C;
+	height:20px;
+	width:150px;
+	margin-top:10px;
+	color:#FFF;
+	background-color:#06C;
+	border:none;
+}
+.as{
+	font-family:"Times New Roman", Times, serif;
+	font-size:18px;
+	color:#06C;
+}

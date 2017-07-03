@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+table{
+	background-color:#069;
+	color:#FFF;
+	font-family:"Times New Roman", Times, serif;
+	font-size:16px;
+	left:50%;
+	margin-top:200px;
+	margin-left:600px;
+	height:130px;
+	width:200px;
+}
+.button{
+	font-family:"Times New Roman", Times, serif;
+	font-size:14px;
+	border:none;
+	background-color:#BDBDBD;
+}
+.button:hover{
+	color:#FFF;
+	border:none;
+	background-color:#878787;
+}
