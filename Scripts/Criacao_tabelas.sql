@@ -16,7 +16,7 @@ create table trab.endereco(
   rua varchar(30) not NULL,
   bairro varchar(15) not NULL,
   complemento varchar(10) NULL,
-  cod_regiao varchar(15) not NULL
+  cod_regiao bigint unsigned NOT NULL
 );
 create table trab.telefone(
   cod_pessoa varchar(15) not NULL,
@@ -61,7 +61,7 @@ create table trab.estoque(
   quantidade integer not NULL
 );
 create table trab.regiao(
-  codigo varchar(15) not NULL UNIQUE,
+  codigo BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
   cidade varchar(10) not NULL,
   estado varchar(10) not NULL
 );
