@@ -1,74 +1,74 @@
 create SCHEMA trab;
 create table trab.pessoa(
-  codigo varchar(10) not NULL UNIQUE,
+  codigo SERIAL,
   cpf varchar(11) NULL,
   cnpj varchar(20) NULL,
   tipo boolean not NULL, /*0-fisica, 1-juridica*/
-  cod_endereco varchar(30) not NULL,
+  cod_endereco BIGINT UNSIGNED NOT NULL,
   nome varchar(30) not NULL,
   login varchar(30) NOT NULL,
   senha varchar(30) not NULL
 );
 create table trab.endereco(
-  codigo varchar(30) not NULL UNIQUE,
+  codigo SERIAL,
   cep varchar(10) not NULL,
   numero varchar(10) not NULL,
   rua varchar(30) not NULL,
   bairro varchar(15) not NULL,
   complemento varchar(10) NULL,
-  cod_regiao bigint unsigned NOT NULL
+  cod_regiao BIGINT UNSIGNED NOT NULL
 );
 create table trab.telefone(
-  cod_pessoa varchar(15) not NULL,
+  cod_pessoa BIGINT UNSIGNED NOT NULL,
   numero varchar(9) not NULL
 );
 create table trab.pedido(
-  cod_pedido varchar(10) not NULL UNIQUE,
-  cod_cliente varchar(10) not NULL,
+  cod_pedido SERIAL,
+  cod_cliente BIGINT UNSIGNED NOT NULL,
   valor_total float not NULL,
   data_pedido date not NULL,
   status text not NULL,
   nota_fiscal text not NULL
 );
 create table trab.comp_pedido(
-  cod_pedido varchar(10) not NULL,
-  cod_item varchar(10) not NULL,
-  cod_cliente varchar(10) not NULL,
+  cod_pedido BIGINT UNSIGNED NOT NULL,
+  cod_item BIGINT UNSIGNED NOT NULL,
+  cod_cliente BIGINT UNSIGNED NOT NULL,
   valor_venda float not NULL
 );
 create table trab.produto(
-  codigo varchar(10) not NULL UNIQUE,
+  codigo SERIAL,
   nome varchar(30) not NULL,
   descricao text not NULL,
   valor_sugerido float not NULL,
-  cod_gerente varchar(10) not NULL
+  cod_gerente BIGINT UNSIGNED NOT NULL
 );
 create table trab.deposito(
-  codigo varchar(10) not NULL UNIQUE,
-  cod_endereco varchar(30) not NULL
+  codigo SERIAL,
+  cod_endereco BIGINT UNSIGNED NOT NULL
 );
 create table trab.item(
-  codigo varchar(10) not NULL UNIQUE,
-  cod_produto varchar(10) not NULL,
-  cod_fornecedor varchar(15) not NULL,
+  codigo SERIAL,
+  cod_produto BIGINT UNSIGNED NOT NULL,
+  cod_fornecedor BIGINT UNSIGNED NOT NULL,
   preco_compra float not NULL,
   quantidade integer not NULL,
   data_compra date not NULL
 );
 create table trab.estoque(
-  cod_item varchar(10) not NULL,
-  cod_deposito varchar(10) not NULL,
+  cod_item BIGINT UNSIGNED NOT NULL,
+  cod_deposito BIGINT UNSIGNED NOT NULL,
   quantidade integer not NULL
 );
 create table trab.regiao(
-  codigo BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+  codigo SERIAL,
   cidade varchar(10) not NULL,
   estado varchar(10) not NULL
 );
 
 /*Alter tables*/
-alter table trab.endereco
-  add constraint un_endereco unique (cep, numero);
+/*alter table trab.endereco
+--  add constraint un_endereco unique (cep, numero);*/
 alter table trab.pessoa
   add constraint pk_pessoa primary key (codigo);
 alter table trab.pessoa
