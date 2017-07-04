@@ -11,8 +11,8 @@ create table trab.pessoa(
 );
 create table trab.endereco(
   codigo varchar(30) not NULL UNIQUE,
-  cep varchar(8) not NULL,
-  numero varchar(5) not NULL,
+  cep varchar(10) not NULL,
+  numero varchar(10) not NULL,
   rua varchar(30) not NULL,
   bairro varchar(15) not NULL,
   complemento varchar(10) NULL,
