@@ -6,7 +6,8 @@ create table trab.pessoa(
   tipo boolean not NULL, /*0-fisica, 1-juridica*/
   cod_endereco varchar(30) not NULL,
   nome varchar(30) not NULL,
-  senha varchar(15) not NULL
+  login varchar(30) NOT NULL,
+  senha varchar(30) not NULL
 );
 create table trab.endereco(
   codigo varchar(30) not NULL UNIQUE,
