@@ -2,7 +2,7 @@ create SCHEMA trab;
 create table trab.pessoa(
   codigo varchar(10) not NULL UNIQUE,
   cpf varchar(11) NULL,
-  cnpj varchar(11) NULL,
+  cnpj varchar(20) NULL,
   tipo boolean not NULL, /*0-fisica, 1-juridica*/
   cod_endereco varchar(30) not NULL,
   nome varchar(30) not NULL,
