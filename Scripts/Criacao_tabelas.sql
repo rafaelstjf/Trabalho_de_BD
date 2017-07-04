@@ -4,12 +4,12 @@ create table trab.pessoa(
   cpf varchar(11) NULL,
   cnpj varchar(11) NULL,
   tipo boolean not NULL, /*0-fisica, 1-juridica*/
-  cod_endereco text not NULL,
+  cod_endereco varchar(30) not NULL,
   nome varchar(30) not NULL,
   senha varchar(15) not NULL
 );
 create table trab.endereco(
-  codigo text not NULL UNIQUE
+  codigo varchar(30) not NULL UNIQUE,
   cep varchar(8) not NULL,
   numero varchar(5) not NULL,
   rua varchar(30) not NULL,
@@ -44,7 +44,7 @@ create table trab.produto(
 );
 create table trab.deposito(
   codigo varchar(10) not NULL UNIQUE,
-  cod_endereco text not NULL
+  cod_endereco varchar(30) not NULL
 );
 create table trab.item(
   codigo varchar(10) not NULL UNIQUE,
