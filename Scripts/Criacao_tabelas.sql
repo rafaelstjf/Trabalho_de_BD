@@ -40,8 +40,7 @@ create table trab.produto(
   codigo SERIAL,
   nome varchar(30) not NULL,
   descricao text not NULL,
-  valor_sugerido float not NULL,
-  cod_gerente BIGINT UNSIGNED NOT NULL
+  valor_sugerido float not NULL
 );
 create table trab.deposito(
   codigo SERIAL,
@@ -103,9 +102,6 @@ alter table trab.comp_pedido
   on update cascade on delete cascade;
 alter table trab.produto
   add constraint pk_produto primary key (codigo);
-alter table trab.produto
-  add foreign key (cod_gerente) references trab.pessoa(codigo)
-  on update cascade on delete cascade;
 alter table trab.deposito
   add constraint pk_deposito primary key (codigo);
 alter table trab.deposito
