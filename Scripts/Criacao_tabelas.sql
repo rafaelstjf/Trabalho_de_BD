@@ -4,17 +4,17 @@ create table trab.pessoa(
   cpf varchar(11) NULL,
   cnpj varchar(11) NULL,
   tipo boolean not NULL, /*0-fisica, 1-juridica*/
-  cep varchar(8) not NULL,
-  numero_res varchar(5) not NULL,
+  cod_endereco text not NULL,
   nome varchar(30) not NULL,
   senha varchar(15) not NULL
 );
 create table trab.endereco(
+  codigo text not NULL UNIQUE
   cep varchar(8) not NULL,
   numero varchar(5) not NULL,
   rua varchar(30) not NULL,
   bairro varchar(15) not NULL,
-  complemento varchar(10) not NULL,
+  complemento varchar(10) NULL,
   cod_regiao varchar(15) not NULL
 );
 create table trab.telefone(
@@ -44,8 +44,7 @@ create table trab.produto(
 );
 create table trab.deposito(
   codigo varchar(10) not NULL UNIQUE,
-  cep varchar(8) not NULL,
-  numero_res varchar(5) not NULL
+  cod_endereco text not NULL
 );
 create table trab.item(
   codigo varchar(10) not NULL UNIQUE,
@@ -72,10 +71,10 @@ alter table trab.endereco
 alter table trab.pessoa
   add constraint pk_pessoa primary key (codigo);
 alter table trab.pessoa
-  add foreign key (cep, numero_res) references trab.endereco(cep,numero)
+  add foreign key (cod_endereco) references trab.endereco(codigo)
   on update cascade on delete cascade;
 alter table trab.endereco
-  add constraint pk_endereco primary key (cep, numero);
+  add constraint pk_endereco primary key (codigo);
 alter table trab.endereco
   add foreign key (cod_regiao) references trab.regiao(codigo)
   on update cascade on delete cascade;
@@ -109,7 +108,7 @@ alter table trab.produto
 alter table trab.deposito
   add constraint pk_deposito primary key (codigo);
 alter table trab.deposito
-  add foreign key (cep, numero_res) references trab.endereco(cep, numero)
+  add foreign key (cod_endereco) references trab.endereco(codigo)
   on update cascade on delete cascade;
 alter table trab.item
   add constraint pk_item primary key (codigo);
