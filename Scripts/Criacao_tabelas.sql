@@ -28,13 +28,14 @@ create table trab.pedido(
   valor_total float not NULL,
   data_pedido date not NULL,
   status text not NULL,
-  nota_fiscal text not NULL
+  nota_fiscal BIGINT UNSIGNED NOT NULL
 );
 create table trab.comp_pedido(
   cod_pedido BIGINT UNSIGNED NOT NULL,
   cod_item BIGINT UNSIGNED NOT NULL,
   cod_cliente BIGINT UNSIGNED NOT NULL,
-  valor_venda float not NULL
+  valor_venda float not NULL,
+  quantidade float NOT NULL
 );
 create table trab.produto(
   codigo SERIAL,
