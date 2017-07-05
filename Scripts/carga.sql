@@ -45,7 +45,7 @@ values (1, 1, 500);
 
 --Carga em Regiao
 insert into trab.regiao (cidade, estado)
-values ('Cidade Dezdez', 'Dez');
+values ('Cidade Dezdez', 'Dez'); 
 
 
 
