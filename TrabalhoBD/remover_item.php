@@ -46,26 +46,16 @@
 	$quant_estoque = $obj3[0];
 
 
+	$quant_estoque = $quant_estoque + $quant;
+
+	$update_estoque = "UPDATE estoque SET quantidade = '$quant_estoque' WHERE cod_item = '$codigo_produto' AND cod_deposito = $cod_deposito";
+	$update = mysqli_query($link,$update_estoque);
 
 
+	$delete_cp = "DELETE FROM comp_pedido WHERE cod_item = '$cod_item' AND cod_cliente = '$codigo_login'";
+	$delete = mysqli_query($link,$delete_cp);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	$delete = "DELETE FROM comp_pedido WHERE cod_item = '$cod_item' AND cod_cliente = '$codigo_login'";
-
-
-
+	header("Location: editar_carrinho.php");
 
 
 	
