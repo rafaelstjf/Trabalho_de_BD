@@ -27,7 +27,7 @@ create table trab.pedido(
   cod_cliente BIGINT UNSIGNED NOT NULL,
   valor_total float not NULL,
   data_pedido date not NULL,
-  status text not NULL,
+  status INT NOT NULL, /* 0 - carrinho, 1 - concluido */
   nota_fiscal BIGINT UNSIGNED NOT NULL
 );
 create table trab.comp_pedido(
