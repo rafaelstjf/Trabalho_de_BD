@@ -21,11 +21,11 @@ values (2, '(32)32403240');
 
 --Carga em Pedido
 insert into trab.pedido (cod_cliente, valor_total, data_pedido, status, nota_fiscal)
-values (1, 500, '2017-06-15', 'Finalizado', '123.456.321.654');
+values (1, 500, '2017-06-15', 0, 123456321654);
 
 --Carga em Comp Pedido
-insert into trab.comp_pedido (cod_pedido, cod_item, cod_cliente, valor_venda)
-values (1, 1, 1, 400);
+insert into trab.comp_pedido (cod_pedido, cod_item, cod_cliente, valor_venda, quantidade)
+values (1, 1, 1, 40, 10);
 
 --Carga em Produto
 insert into trab.produto (nome, descricao, valor_sugerido, preco_venda)
