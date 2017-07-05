@@ -19,6 +19,6 @@ Trabalho de banco de dados 2017.1
 - [ ] Listar produtos em baixa no estoque (*a seleção disso pode ser feita por um trigger, mas deve ter uma tela para mostrar a relação de produtos em baixa*)
 - [ ] Emissão de nota fiscal
 - [ ] Relatorio de compras (*com filtro por data*)
-- [ ] Listagem de clientes cadastrados
-- [ ] Listagem de fornecedores cadastrados
-- [ ] Listagem de regiões cadastradas (*e quais possuem um deposito relacionado*)
+- [x] Listagem de clientes cadastrados
+- [x] Listagem de fornecedores cadastrados
+- [x] Listagem de regiões cadastradas (*e quais possuem um deposito relacionado*)
