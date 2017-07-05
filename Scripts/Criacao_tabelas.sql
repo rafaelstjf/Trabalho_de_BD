@@ -3,7 +3,7 @@ create table trab.pessoa(
   codigo SERIAL,
   cpf varchar(11) NULL,
   cnpj varchar(20) NULL,
-  tipo boolean not NULL, /*0-fisica, 1-juridica*/
+  tipo boolean not NULL, /*0-cliente, 1-fornecedor, 2-gerente*/
   cod_endereco BIGINT UNSIGNED NOT NULL,
   nome varchar(30) not NULL,
   login varchar(30) NOT NULL,
@@ -41,7 +41,7 @@ create table trab.produto(
   codigo SERIAL,
   nome varchar(30) not NULL,
   descricao text not NULL,
-  valor_sugerido float not NULL,
+  valor_sugerido float not NULL DEFAULT 0,
   preco_venda float NOT NULL
 );
 create table trab.deposito(
