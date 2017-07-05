@@ -4,9 +4,9 @@ Trabalho de banco de dados 2017.1
 ## Lista de Especificações:
 
 **Scripts do Banco de Dados**
-- [ ] Criação de tabelas (*Pronto mas precisa de alguma correções*)
+- [ ] Criação de tabelas (*Pronto mas precisa de algumas correções*)
 - [x] Carga minima do banco de dados
-- [ ] *Trigger / Precedure* para o calculo do preço sugerido
+- [x] *Trigger e Precedures* para o calculo do preço sugerido
 
 **Paginas em PHP**
 - [x] Login
