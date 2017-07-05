@@ -43,8 +43,8 @@ insert into trab.comp_pedido (cod_pedido, cod_item, cod_cliente, valor_venda, qu
 values (1, 1, 1, 40, 10);
 
 /*Carga em Deposito*/
-insert into trab.deposito (cod_endereco)
-values (2);
+insert into trab.deposito (cod_endereco, nome)
+values (2, 'Nome do deposito');
 
 /*Carga em Estoque*/
 insert into trab.estoque (cod_item, cod_deposito, quantidade)
