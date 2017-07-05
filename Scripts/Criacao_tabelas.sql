@@ -40,7 +40,8 @@ create table trab.produto(
   codigo SERIAL,
   nome varchar(30) not NULL,
   descricao text not NULL,
-  valor_sugerido float not NULL
+  valor_sugerido float not NULL,
+  preco_venda float NOT NULL
 );
 create table trab.deposito(
   codigo SERIAL,
