@@ -46,7 +46,8 @@ create table trab.produto(
 );
 create table trab.deposito(
   codigo SERIAL,
-  cod_endereco BIGINT UNSIGNED NOT NULL
+  cod_endereco BIGINT UNSIGNED NOT NULL,
+  nome varchar(30) not NULL
 );
 create table trab.item(
   codigo SERIAL,
