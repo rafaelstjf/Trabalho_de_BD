@@ -37,7 +37,7 @@ values (2);
 
 --Carga em Item
 insert into trab.item (cod_produto, cod_fornecedor, preco_compra, quantidade, data_compra) 
-values (1, 1, 40, 10, '2017-06-10');
+values (1, 2, 40, 10, '2017-06-10');
 
 --Carga em Estoque
 insert into trab.estoque (cod_item, cod_deposito, quantidade)
