@@ -85,7 +85,7 @@
 
 
 			$update_estoque = "UPDATE estoque SET quantidade = '$quant_estoque' WHERE cod_item = '$codigo_produto' AND cod_deposito = $cod_deposito";
-			$update = = mysqli_query($link,$update_estoque);
+			$update = mysqli_query($link,$update_estoque);
 			
 			header ("Location: decisao.php");
 
