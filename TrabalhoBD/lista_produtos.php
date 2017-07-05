@@ -19,7 +19,7 @@
 		<tr align='center'>	
 			<td>nome</td>
 			<td>descrição</td>
-			<td>preço</td>
+			<td colspan='2'>preço</td>
 		</tr>";
 	while($row = mysqli_fetch_row($consultaSQL)){
 		echo "<tr>";
@@ -30,7 +30,7 @@
 		}
 		echo "</tr>";
 	}
-	echo "</tr></table>";
+	echo "</table>";
 	mysqli_close($link);
 ?>
 

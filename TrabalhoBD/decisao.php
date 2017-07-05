@@ -10,21 +10,14 @@
 <body> 
 
 
-	<form name="cadastro" method="post" action="cadastro_pessoa.php">
+	<table border='1' align='center'>
+			<tr align='center'>	
+				<td><a href="lista_produtos.php">Continuar comprando</a></td>
+				<td><a href="editar_carrinho.php">Editar Carrinho</a></td>
+				<td><a href="fecharcarrinho.php">Fechar Carrinho</a></td>
+			</tr>			
 
-
-	<table align="center" border="1">
-			<tr>
-				<th colspan="2" align="center">Cadastro</th>
-			</tr>
-		<tbody>
-			<tr>
-				<td><a href="cadastro_pfisica.php">Pessoa Física</a></td>
-				<td><a href="cadastro_gerente.php">Gerente</a></td>
-			</tr>
-		</tbody>
 	</table>
-	</form>
 
 </body>
 </html>

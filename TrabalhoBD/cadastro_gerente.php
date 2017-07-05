@@ -10,12 +10,12 @@
 <body> 
 
 
-	<form name="cadastrojuridico" method="post" action="cadastro_pessoa.php">
+	<form name="cadastrofisico" method="post" action="cadastro_pessoa.php">
 
 
 	<table align="center" border="1">
 			<tr>
-				<th colspan="2" align="center">Cadastro Fornecedor</th>
+				<th colspan="2" align="center">Cadastro Gerente</th>
 			</tr>
 		<tbody>
 			<tr>
@@ -23,8 +23,8 @@
 				<td><input type="text" name="nome" id="nome"/></td>
 			</tr>
 			<tr>
-				<td>CNPJ:</td>
-				<td><input type="text" name="cnpj" id="cnpj"/></td>
+				<td>CPF:</td>
+				<td><input type="text" name="cpf" id="cpf"/></td>
 			</tr>
 			<tr>
 				<td>Login:</td>
@@ -72,9 +72,9 @@
 			</tr>
 	
 
-			<input type="hidden" name="type" id="type" value="1"/>
+			<input type="hidden" name="type" id="type" value="2"/>
 			<tr>
-				<td colspan="2" align="center"><input class="button" value="Cadastrar"  type="button"  onclick="cadastrarJ();"/></td>
+				<td colspan="2" align="center"><input class="button" value="Cadastrar"  type="button"  onclick="cadastrarF();"/></td>
 			</tr>
 
 		</tbody>

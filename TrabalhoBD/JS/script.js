@@ -20,8 +20,9 @@ function cadastrarF(){
 	var bairro=document.getElementById("bairro").value;
 	var cidade=document.getElementById("cidade").value;
 	var estado=document.getElementById("estado").value;
+	var telefone=document.getElementById("telefone").value;
 
-	if ((nome!="") && (cpf!="")  && (login!="")  && (senha!="")  && (cep!="")  && (rua!="")   && (num!="") && (comp!="")  && (bairro!="")  && (cidade!="")  && (estado!="")){
+	if ((nome!="") && (cpf!="")  && (login!="")  && (senha!="")  && (cep!="")  && (rua!="")   && (num!="") && (comp!="")  && (bairro!="")  && (cidade!="")  && (estado!="") && (telefone!="")){
 		document.cadastrofisico.submit();
 	}else{
 		alert ("Preencha todos os campos corretamente!");
@@ -41,10 +42,22 @@ function cadastrarJ(){
 	var bairro=document.getElementById("bairro").value;
 	var cidade=document.getElementById("cidade").value;
 	var estado=document.getElementById("estado").value;
+	var telefone=document.getElementById("telefone").value;
 
-	if ((nome!="") && (cnpj!="")  && (login!="")  && (senha!="")  && (cep!="")  && (rua!="")   && (num!="") && (comp!="")  && (bairro!="")  && (cidade!="")  && (estado!="")){
+	if ((nome!="") && (cnpj!="")  && (login!="")  && (senha!="")  && (cep!="")  && (rua!="")   && (num!="") && (comp!="")  && (bairro!="")  && (cidade!="")  && (estado!="") && (telefone!="")){
 		document.cadastrojuridico.submit();
 	}else{
 		alert ("Preencha todos os campos corretamente!");
 	}
+}
+
+
+function comprar(){
+	var quant=document.getElementById("quantidade").value;
+	if(quant!=""){
+		document.finalizarcompra.submit();
+	}else{
+		alert ("Digite uma quantidade válida!");
+	}
+
 }

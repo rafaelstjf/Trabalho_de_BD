@@ -15,7 +15,37 @@
 	$codigo_produto=$_GET['codigo'];
 
 	$link = mysqli_connect("localhost", "root", "", "trab");
-	
+	$query = "SELECT nome, descricao, preco_venda FROM produto WHERE codigo = '$codigo_produto' ";
+	$consultaSQL = mysqli_query($link,$query);
+
+
+
+	$obj = mysqli_fetch_row($consultaSQL);
+	echo "
+		<form name='finalizarcompra' method='post' action='finalizarcompra.php'>
+		<table border='1' align='center'>
+			<tr align='center'>	
+				<td>nome</td>
+				<td>descrição</td>
+				<td>preço</td>
+				
+			</tr>
+			<tr>
+				<td>".$obj[0]."</td>
+				<td>".$obj[1]."</td>
+				<td>".$obj[2]."</td>
+			</tr>
+			<tr>
+				<td colspan = '2'>quantidade:</td>
+				<td><input type='number' name='quantidade' id='quantidade' min='1'/></td>
+			</tr>
+			<tr>
+				<input type='hidden' name='preco' id='preco' value='".$obj[2]."' />
+				<input type='hidden' name='codigo_produto' id='codigo_produto' value='".$codigo_produto."' />
+				<td colspan ='3' align='center'><input type='button' class='button'  value='Comprar' onclick='comprar();'></td>
+			</tr>
+		</table>
+		</form>";
 	mysqli_close($link);
 ?>
 

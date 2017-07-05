@@ -27,13 +27,13 @@
 
 	if($saida == 1) {
 		if($tipo == 0){
-			header ("Location: http://localhost/TrabalhoBD/lista_produtos.php");
-		}else if($tipo == 1){
-			header ("Location: http://localhost/TrabalhoBD/fornecedores.php");			
+			header ("Location: lista_produtos.php");
+		}else if($tipo == 2){
+			header ("Location: gerenciar.php");			
 		}
 
 	}else{
-		header ("Location: http://localhost/TrabalhoBD/login_invalido.php");
+		header ("Location: login_invalido.php");
 	}
 	mysqli_close($link);
 ?>

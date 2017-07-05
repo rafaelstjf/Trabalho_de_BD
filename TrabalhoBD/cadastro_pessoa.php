@@ -13,6 +13,7 @@
 
 <?php 
 	$tipo = $_POST['type'];
+	$telefone = $_POST['telefone'];
 	
 	$nome = $_POST['nome'];
 	$login = $_POST['login'];
@@ -37,10 +38,12 @@
 	$query2 = "SELECT codigo FROM endereco WHERE cep = '$cep' AND numero = '$num' AND complemento = '$comp'";
 
 	$select1 = mysqli_query($link,$query1);
+	$select2 = mysqli_query($link,$query2);
 
 
 	$saida1 = mysqli_num_rows($select1);
 	$saida2 = mysqli_num_rows($select2);
+
 
 	if($saida1 == 0){
 		$query_regiao = "INSERT INTO regiao (cidade,estado) VALUES ('$cidade','$estado')";
@@ -62,7 +65,7 @@
 	$codigo_endereco = $obj2[0];
 	
 
-	if($tipo == 0){
+	if(($tipo == 0)||($tipo == 2)){
 		$cpf = $_POST['cpf'];
 
 		$insert_pessoa= "INSERT INTO pessoa (cpf,tipo,cod_endereco,nome,login,senha) VALUES ('$cpf', '$tipo','$codigo_endereco','$nome','$login','$senha')";
@@ -73,10 +76,22 @@
 		$insert_pessoa= "INSERT INTO pessoa (cnpj,tipo,cod_endereco,nome,login,senha) VALUES ('$cnpj', '$tipo','$codigo_endereco','$nome','$login','$senha')";
 	}
 
+	$cadastro_pessoa = mysqli_query($link,$insert_pessoa);
+	
+
+	$query3 = "SELECT codigo from pessoa WHERE nome = $nome AND cod_endereco = $codigo_endereco";
+	$select3 = mysqli_query($link,$query3);
+	$s3 = mysqli_fetch_row($select3);
+	$cod_pessoa = $s3[0];
 
 
+	$tel = "INSERT INTO telefone (cod_pessoa,numero) VALUES ('$cod_pessoa','$telefone')";
+
+	$cadastro_tel = mysqli_query($link,$tel);
 
 	mysqli_close($link);
+	if($tipo == 0) header ("Location: lista_produtos.php");
+	else if($tipo == 2)  header ("Location: gerenciar.php");
 
 ?>
 

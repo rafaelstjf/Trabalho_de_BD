@@ -35,6 +35,11 @@
 				<td><input type="password" name="senha" id="senha"/></td>
 			</tr>
 			<tr>
+				<td>Telefone:</td>
+				<td><input type="text" name="telefone" id="telefone"/></td>
+			</tr>
+
+			<tr>
 				<td colspan="2">Endereço:</td>
 			</tr>
 			<tr>

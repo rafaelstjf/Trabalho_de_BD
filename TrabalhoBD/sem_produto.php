@@ -10,21 +10,18 @@
 <body> 
 
 
-	<form name="cadastro" method="post" action="cadastro_pessoa.php">
-
-
 	<table align="center" border="1">
-			<tr>
-				<th colspan="2" align="center">Cadastro</th>
-			</tr>
+		<tr>
+			<th colspan='2'>
+				O produto na quantidade desejada está indisponível
+			</th>
+		</tr>
 		<tbody>
 			<tr>
-				<td><a href="cadastro_pfisica.php">Pessoa Física</a></td>
-				<td><a href="cadastro_gerente.php">Gerente</a></td>
+				<td><a href="lista_produtos.php">Voltar para os produtos</a></td>
 			</tr>
 		</tbody>
 	</table>
-	</form>
 
 </body>
 </html>

@@ -9,22 +9,19 @@
 </head>
 <body> 
 
-
-	<form name="cadastro" method="post" action="cadastro_pessoa.php">
-
-
-	<table align="center" border="1">
-			<tr>
-				<th colspan="2" align="center">Cadastro</th>
+	<table border='1' align='center'>
+			<tr align='center'>	
+				<td colspan='2'>Seu carrinho está atualmente encerrado</td>
 			</tr>
-		<tbody>
-			<tr>
-				<td><a href="cadastro_pfisica.php">Pessoa Física</a></td>
-				<td><a href="cadastro_gerente.php">Gerente</a></td>
+			<tr align='center'>	
+				<td colspan='2'>O que deseja fazer?</td>
 			</tr>
-		</tbody>
+			<tr>
+				<td><a href="index.php">Sair</a></td>
+				<td><a href="reiniciar_carrinho.php">Reiniciar carrinho e comprar outros produtos</a></td>
+			</tr>
 	</table>
-	</form>
+
 
 </body>
 </html>
