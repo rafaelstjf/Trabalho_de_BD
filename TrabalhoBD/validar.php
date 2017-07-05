@@ -9,20 +9,35 @@
 
 
 <?php
-	
+	session_start();
+
 	$nome=$_POST["nome"];
 	$senha=$_POST["senha"];
 
 	$link = mysqli_connect("localhost", "root", "", "trab");
-	$query = "SELECT login,senha FROM pessoa WHERE login = '$nome' AND senha = '$senha'";
+	$query = "SELECT tipo,codigo,login,senha FROM pessoa WHERE login = '$nome' AND senha = '$senha'";
 	$consultaSQL = mysqli_query($link,$query);
+	$obj = mysqli_fetch_row($consultaSQL);
+
+	$tipo = $obj[0];
+	$codigo_login = $obj[1];
 	$saida = mysqli_num_rows($consultaSQL);
+
+	$_SESSION['codigo_login'] = $codigo_login;
+
 	if($saida == 1) {
-		header ("Location: http://localhost/TrabalhoBD/conectado.php");
+		if($tipo == 0){
+			header ("Location: http://localhost/TrabalhoBD/lista_produtos.php");
+		}else if($tipo == 1){
+			header ("Location: http://localhost/TrabalhoBD/fornecedores.php");			
+		}
+
 	}else{
 		header ("Location: http://localhost/TrabalhoBD/login_invalido.php");
 	}
 	mysqli_close($link);
 ?>
+
+
 </body>
 </html>

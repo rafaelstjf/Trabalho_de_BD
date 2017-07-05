@@ -28,11 +28,11 @@
 			</tr>
 			<tr>
 				<td>Login:</td>
-				<td><input type="text" name="login" id="loginf"/></td>
+				<td><input type="text" name="login" id="login"/></td>
 			</tr>
 			<tr>
 				<td>Senha:</td>
-				<td><input type="password" name="senha" id="senhaf"/></td>
+				<td><input type="password" name="senha" id="senha"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">Endereço:</td>

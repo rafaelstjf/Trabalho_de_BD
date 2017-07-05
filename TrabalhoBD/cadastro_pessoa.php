@@ -13,39 +13,68 @@
 
 <?php 
 	$tipo = $_POST['type'];
-	echo $tipo;
-	if ($tipo == 0) echo " - LOGIN PESSOA FÍSICA";
-	else if($tipo == 1) echo " - LOGIN PESSOA JURÍDICA";
+	
+	$nome = $_POST['nome'];
+	$login = $_POST['login'];
+	$senha = $_POST['senha'];
+
+	$rua = $_POST['rua'];
+	$bairro = $_POST['bairro'];
 
 	$cep = $_POST['cep'];
 	$num = $_POST ['num'];
 	$comp = $_POST['comp'];
-	$id_endereco = $cep.$num.$comp;
+
 
 	$cidade = $_POST['cidade'];
 	$estado = $_POST['estado'];
-	$id_regiao = $cidade.$estado;
-	echo " ".$id_endereco;
+
 	
 
 
 	$link = mysqli_connect("localhost", "root", "", "trab");
-	$query = "SELECT codigo FROM regiao WHERE cidade = '$cidade' AND estado = '$estado' ";
-	$consultaSQL = mysqli_query($link,$query);
-	$saida = mysqli_num_rows($consultaSQL);
+	$query1 = "SELECT codigo FROM regiao WHERE cidade = '$cidade' AND estado = '$estado' ";
+	$query2 = "SELECT codigo FROM endereco WHERE cep = '$cep' AND numero = '$num' AND complemento = '$comp'";
 
-	if($saida == 0){
+	$select1 = mysqli_query($link,$query1);
+
+
+	$saida1 = mysqli_num_rows($select1);
+	$saida2 = mysqli_num_rows($select2);
+
+	if($saida1 == 0){
 		$query_regiao = "INSERT INTO regiao (cidade,estado) VALUES ('$cidade','$estado')";
-	}else if ($saida == 1){
-		
-
-
-
-
-
-
-
+        $insert_regiao = mysqli_query($link,$query_regiao);
 	}
+
+	$select1 = mysqli_query($link,$query1);
+	$obj1 = mysqli_fetch_row($select1);
+	$codigo_regiao = $obj1[0];
+
+
+	if($saida2 == 0){
+		$query_endereco = "INSERT INTO endereco (cep,numero,rua,bairro,complemento,cod_regiao) VALUES ('$cep','$num','$rua','$bairro','$comp','$codigo_regiao')";
+		$insert_endereco = mysqli_query($link,$query_endereco);
+	}
+
+	$select2 = mysqli_query($link,$query2);
+	$obj2 = mysqli_fetch_row($select2);
+	$codigo_endereco = $obj2[0];
+	
+
+	if($tipo == 0){
+		$cpf = $_POST['cpf'];
+
+		$insert_pessoa= "INSERT INTO pessoa (cpf,tipo,cod_endereco,nome,login,senha) VALUES ('$cpf', '$tipo','$codigo_endereco','$nome','$login','$senha')";
+		
+	}else if($tipo == 1){
+		$cnpj = $_POST['cnpj'];
+
+		$insert_pessoa= "INSERT INTO pessoa (cnpj,tipo,cod_endereco,nome,login,senha) VALUES ('$cnpj', '$tipo','$codigo_endereco','$nome','$login','$senha')";
+	}
+
+
+
 
 	mysqli_close($link);
 

@@ -11,7 +11,7 @@
 
 	<table align="center" border="1">
 			<tr>
-				<th colspan="2" align="center">Login inválido?</th>
+				<th colspan="2" align="center">Login inválido</th>
 			</tr>
 		<tbody>
 			<tr>

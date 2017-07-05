@@ -20,14 +20,14 @@
 		<tbody>
 			<tr>
 				<td>Login:</td>
-				<td><input type="text" name="nome" id="user"/></td>
+				<td><input type="text" name="login" id="user"/></td>
 			</tr>
 			<tr>
 				<td>Senha</td>
 				<td><input type="password" name="senha" id="pass"/></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input class="button" value="Login"  type="button"  onclick="validar();"/></td>
+				<td colspan="2" align="center"><input value="Login"  type="button"  onclick="validar();"/></td>
 			</tr>
  			<tr>
 				<td colspan="2" align="center">Não tem login? <a href="cadastrar.php">Cadastre-se!</a></td>
