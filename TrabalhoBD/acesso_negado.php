@@ -9,22 +9,20 @@
 </head>
 <body> 
 
-
-	<form name="cadastro" method="post" action="cadastro_pessoa.php">
-
-
 	<table align="center" border="1">
 			<tr>
-				<th colspan="2" align="center">Cadastro</th>
+				<th colspan="2" align="center">Não é possível acessar este sistema como empresa</th>
+			</tr>
+			<tr>
+				<th colspan="2" align="center">Por favor, crie um perfil de cliente para acessar o sistema</th>
 			</tr>
 		<tbody>
 			<tr>
-				<td><a href="cadastro_pfisica.php">Cliente</a></td>
-				<td><a href="cadastro_gerente.php">Gerente</a></td>
+				<td><a href="index.php">Tente novamente</a></td>
+				<td><a href="cadastrar.php">Cadastre-se agora</a></td>
 			</tr>
 		</tbody>
 	</table>
-	</form>
 
 </body>
 </html>

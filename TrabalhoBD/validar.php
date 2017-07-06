@@ -30,7 +30,8 @@
 			header ("Location: lista_produtos.php");
 		}else if($tipo == 2){
 			header ("Location: gerenciar.php");			
-		}
+		}else if($tipo == 1) 
+			header("Location: acesso_negado.php")
 
 	}else{
 		header ("Location: login_invalido.php");
