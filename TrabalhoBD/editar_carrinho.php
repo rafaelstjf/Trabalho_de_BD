@@ -25,16 +25,15 @@
 
 
 
-	$list = "SELECT cod_pedido FROM pedido WHERE cod_cliente = '$codigo_login'";
+	$list = "SELECT cod_pedido FROM pedido WHERE (cod_cliente = '$codigo_login' AND status = '0')";
 	$codp = mysqli_query($link,$list);
 	$objpedido = mysqli_fetch_row($codp);
 	$cod_pedido = $objpedido[0];
 
 
 
-	$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, cp.quantidade, cp.cod_item  FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND cod_cliente = '$codigo_login'";
+	$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, cp.quantidade, cp.cod_item  FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND pe.cod_cliente = '$codigo_login'";
 	$l1 = mysqli_query($link,$listar);
-	$row_produtos = mysqli_fetch_row($l1);
 
 
 	echo "<table border='1' align='center'>

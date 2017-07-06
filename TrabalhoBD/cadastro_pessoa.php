@@ -1,16 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Trabalho de Banco de Dados</title>
-
-<script type="text/javascript" src="JS/script.js"></script>
-
-</head>
-<body> 
-
-
-
 <?php 
 	$tipo = $_POST['type'];
 	$telefone = $_POST['telefone'];
@@ -68,12 +55,12 @@
 	if(($tipo == 0)||($tipo == 2)){
 		$cpf = $_POST['cpf'];
 
-		$insert_pessoa= "INSERT INTO pessoa (cpf,tipo,cod_endereco,nome,login,senha) VALUES ('$cpf', '$tipo','$codigo_endereco','$nome','$login','$senha')";
+		$insert_pessoa= "INSERT INTO pessoa (cpf,tipo,cod_endereco,nome,email,senha) VALUES ('$cpf', '$tipo','$codigo_endereco','$nome','$login','$senha')";
 		
 	}else if($tipo == 1){
 		$cnpj = $_POST['cnpj'];
 
-		$insert_pessoa= "INSERT INTO pessoa (cnpj,tipo,cod_endereco,nome,login,senha) VALUES ('$cnpj', '$tipo','$codigo_endereco','$nome','$login','$senha')";
+		$insert_pessoa= "INSERT INTO pessoa (cnpj,tipo,cod_endereco,nome,email,senha) VALUES ('$cnpj', '$tipo','$codigo_endereco','$nome','$login','$senha')";
 	}
 
 	$cadastro_pessoa = mysqli_query($link,$insert_pessoa);
@@ -94,6 +81,3 @@
 	else if($tipo == 2)  header ("Location: gerenciar.php");
 
 ?>
-
-</body>
-</html>

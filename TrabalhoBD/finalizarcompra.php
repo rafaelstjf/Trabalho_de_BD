@@ -22,27 +22,82 @@
 	$qnt=$_POST['quantidade'];
 
 
-	$query1 = "SELECT cod_endereco FROM pessoa WHERE cod_cliente = '$codigo_login'";
-	$select1 = mysqli_query($link,$query1);
-	$obj1 = mysqli_fetch_row($select1);
-	$cod_endereco = $obj1[0];
+	$q1 = "SELECT cod_endereco FROM pessoa WHERE (codigo = '$codigo_login')";
+	$s1 = mysqli_query($link,$q1);
+	$cod_endereco = -1;
+	echo $codigo_login;
+	while($obj1 = mysqli_fetch_row($s1))
+	{
+		$cod_endereco = $obj1[0];
+	}
 
 	
-	$query2 = "SELECT codigo FROM deposito WHERE cod_endereco = '$cod_endereco'";
-	$select2 = mysqli_query($link,$query2);
-	$obj2 = mysqli_fetch_row($select2);
+	if($cod_endereco == -1)
+	{
+		echo "Erro: sem endereço";
+	}
+
+	$q2 = "SELECT codigo FROM deposito WHERE cod_endereco = '$cod_endereco'";
+	$s2 = mysqli_query($link,$q2);
+	$obj2 = mysqli_fetch_row($s2);
 	$cod_deposito = $obj2[0];
 
 		
-	$query3 = "SELECT quantidade FROM estoque WHERE cod_item = '$codigo_produto' AND cod_deposito = '$cod_deposito";
-	$select3 = mysqli_query($link,$query3);
-	$obj3 = mysqli_fetch_row($select3);
-	$quant_estoque = $obj3[0];
+	$q3 = "SELECT quantidade, cod_deposito FROM estoque WHERE cod_item = '$codigo_produto'";
+	$s3 = mysqli_query($link,$q3);
 
-	$query4 = "SELECT status FROM pedido WHERE cod_cliente = '$codigo_login";
-	$select4 = mysqli_query($link,$query4);
-	$obj4 = mysqli_fetch_row($select4);
-	$status = $obj4[0];
+	$cod_dep_sel = -1;
+	$quant_estoque = 0;
+	while($row = mysqli_fetch_row($s3)){
+		$quant_dep = $row[0];
+		if($quant_dep >= $qnt)
+		{
+			if($cod_dep_sel != $cod_deposito)
+			{
+				$cod_dep_sel = $row[1];
+				$quant_estoque = $row[0];
+			}
+		}
+	}
+
+	if($cod_dep_sel != -1)
+	{
+		$cod_deposito = $cod_dep_sel;
+	}
+
+
+	$q4 = "SELECT cod_pedido, status FROM pedido WHERE (cod_cliente = '$codigo_login')";
+	$s4 = mysqli_query($link,$q4);
+	$cod_pedido = -1;
+	while($obj4 = mysqli_fetch_row($s4))
+	{
+		// Se tiver um pedido como carrinho, use ele
+		if($obj4[1] == 0)
+		{
+			$cod_pedido = $obj4[0];
+		}
+	}
+
+	if($cod_pedido == -1)
+	{
+		$date = date("d-m-Y");
+
+		$notaf = rand(0,9223372036854775807);
+
+		$q5 = "INSERT INTO pedido (cod_cliente, valor_total, data_pedido, status, nota_fiscal) VALUES ('$codigo_login', '0.0', '$date', '0', '$notaf');";
+		$s5 = mysqli_query($link,$q5);
+
+		$q6 = "SELECT cod_pedido, status FROM pedido WHERE (cod_cliente = '$codigo_login')";
+		$s6 = mysqli_query($link,$q6);
+
+		while($obj5 = mysqli_fetch_row($s6))
+		{
+			$cod_pedido = $obj5[0];
+		}
+	}
+
+	echo "Pedido:".$cod_pedido;
+	$status = 0;
 
 	if($quant_estoque >= $qnt){
 		if ($status == 0){
@@ -52,30 +107,15 @@
 
 			$total = $qnt*$preco;
 
-			$today = getdate();
-			$d = $today['mday'];
-			$m = $today['mon'];
-			$y = $today['year'];
-			$date = $d."/".$m."/".$y;
-
-			$query = "SELECT valor_total FROM pedido WHERE cod_cliente = '$codigo_login'";
-			$select = mysqli_query($link,$query);
-			$obj = mysqli_fetch_row($select);
-			$valortotal = $obj[0];
-
-			$valortotal = intval($valortotal);
-			$valortotal = $valortotal + $total;
+			$d = date('d');
+			$m = date('m');
+			$y = date('Y');
 
 			$notaf = rand(0,9223372036854775807);
 
-			$insert_pedido = "UPDATE pedido SET valor_total = '$valortotal', data_pedido = '$date', nota_fiscal = '$notaf'  WHERE  cod_cliente = '$codigo_login'";
+			$insert_pedido = "UPDATE pedido SET valor_total = (valor_total + '$total'), data_pedido = (STR_TO_DATE('$y,$m,$d','%Y,%m,%d')), nota_fiscal = ('$notaf')  WHERE  cod_cliente = '$codigo_login'";
 			$ins_p = mysqli_query($link,$insert_pedido);
 
-
-			$qpedido = "SELECT cod_pedido FROM pedido WHERE cod_cliente = '$codigo_login'";
-			$spedido = mysqli_query($link,$qpedido);
-			$objpedido = mysqli_fetch_row($spedido);
-			$cod_pedido = $objpedido[0];
 
 			$insert_itens_pedido = "INSERT INTO comp_pedido (cod_pedido,cod_item,cod_cliente,valor_venda,quantidade) VALUES ('$cod_pedido','$codigo_produto','$codigo_login','$preco','$qnt')";
 			$isp = mysqli_query($link,$insert_itens_pedido);
@@ -87,14 +127,15 @@
 			$update_estoque = "UPDATE estoque SET quantidade = '$quant_estoque' WHERE cod_item = '$codigo_produto' AND cod_deposito = $cod_deposito";
 			$update = mysqli_query($link,$update_estoque);
 			
-
+			header ("Location: decisao.php");
 		}else if ($status == 1){
+			header ("Location: carrinho_fechado.php");
 
 		}
 	}else{
+		header ("Location: sem_produto.php");
 	}
 
-	echo "Estoque: ".$quant_estoque." - Quantidade Produto: ".$qnt;
 	mysqli_close($link);
 
 ?>

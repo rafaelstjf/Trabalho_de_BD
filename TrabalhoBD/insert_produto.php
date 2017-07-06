@@ -16,10 +16,37 @@
   	$descricao = $_POST['descricao'];
   	$preco_venda = $_POST['preco_venda'];
 
+
+    $cod_fornecedor = $_POST['id_fornecedor'];
+    $preco_compra = $_POST['preco_compra'];
+    $quantidade = $_POST['quantidade'];
+    $data_compra = $_POST['data_compra'];
+
   	$link = mysqli_connect("localhost", "root", "", "trab");
-    $query = "INSERT INTO produto(nome, descricao, preco_venda) VALUES ('$nome', '$descricao', '$preco_venda')";
-  	$select1 = mysqli_query($link,$query);
-  	mysqli_close($link);
+
+
+    $query1 = "SELECT codigo FROM pedido WHERE nome = '$nome'";
+    $select1 = mysqli_query($link,$query1);
+    $saida = mysqli_num_rows($select1);
+    $obj = mysqli_fetch_row($select1);
+    $cod_produto = $obj[0];
+
+    if ($saida == 0){
+      $query2 = "INSERT INTO produto(nome, descricao, preco_venda) VALUES ('$nome', '$descricao', '$preco_venda')";
+      $select2 = mysqli_query($link,$query2);
+
+    
+      $query3 = "INSERT INTO item(cod_produto, cod_fornecedor, preco_compra, quantidade, data_compra) VALUES ('$cod_produto','$cod_fornecedor','$preco_compra','$quantidade','$data_compra')";
+      $insert = mysqli_query($link,$query3);
+    } else if ($saida == 1){
+      $query3 = "INSERT INTO item(cod_produto, cod_fornecedor, preco_compra, quantidade, data_compra) VALUES ('$cod_produto','$cod_fornecedor','$preco_compra','$quantidade','$data_compra')";
+      $insert = mysqli_query($link,$query3);
+    }
+    $query4 = "CALL preco_sugerido(cod_produto)";
+    $procedure = mysqli_query($link,$query4);
+
+    
+    mysqli_close($link);
     header ("Location: gerenciar.php");
 
   ?>

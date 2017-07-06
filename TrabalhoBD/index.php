@@ -20,11 +20,11 @@
 		<tbody>
 			<tr>
 				<td>Login:</td>
-				<td><input type="text" name="login" id="user"/></td>
+				<td><input type="text" name="login" id="login"/></td>
 			</tr>
 			<tr>
 				<td>Senha</td>
-				<td><input type="password" name="senha" id="pass"/></td>
+				<td><input type="password" name="senha" id="senha"/></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input value="Login"  type="button"  onclick="validar();"/></td>

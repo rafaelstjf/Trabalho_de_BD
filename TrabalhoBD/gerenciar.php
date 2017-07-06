@@ -7,29 +7,36 @@
 <script type="text/javascript" src="JS/script.js"></script>
 
 </head>
-<body>
+<body> 
 
 
 	<table border='1' align='center'>
-			<tr align='center'>
+			<tr align='center'>	
 				<td><a href="cadastro_pjuridica.php">Cadastrar Fornecedor</a></td>
-<<<<<<< HEAD
-				<td><a href="cadastro_produto.php">Cadastrar Produtos</a></td>
-=======
-				<td><a href="cadastrar_produtos.php">Cadastrar Produtos</a></td>
+				<td><a href="cadastro_produto_item.php">Cadastrar Produtos</a></td>
 
 				<td><a href="listar_cliente.php">Listar Clientes</a></td>
-				<td><a href="listar_fornecedor.php">Listar Fornecedores</a></td>
+				<td><a href="listar_fornecedores.php">Listar Fornecedores</a></td>
 				<td><a href="listar_regiao_deposito.php">Listar Regiões/Depósito</a></td>
 
 
 
 
->>>>>>> 856343399278c0e5ec57b3bed28dc557db19044f
 				<td><a href="lista_produtos2.php">Listar Produtos</a></td>
-			</tr>
+			</tr>			
 
 	</table>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

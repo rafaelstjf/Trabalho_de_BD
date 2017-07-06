@@ -15,7 +15,7 @@
 	$senha=$_POST["senha"];
 
 	$link = mysqli_connect("localhost", "root", "", "trab");
-	$query = "SELECT tipo,codigo,login,senha FROM pessoa WHERE login = '$nome' AND senha = '$senha'";
+	$query = "SELECT tipo,codigo,email,senha FROM pessoa WHERE email = '$nome' AND senha = '$senha'";
 	$consultaSQL = mysqli_query($link,$query);
 	$obj = mysqli_fetch_row($consultaSQL);
 
@@ -24,7 +24,7 @@
 	$saida = mysqli_num_rows($consultaSQL);
 
 	$_SESSION['codigo_login'] = $codigo_login;
-	echo $saida."  ".$tipo;
+
 	if($saida == 1) {
 		if($tipo == 0){
 			header ("Location: lista_produtos.php");

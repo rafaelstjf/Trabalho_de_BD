@@ -1,6 +1,6 @@
 function validar(){
-	var user=document.getElementById("user").value;
-	var pass=document.getElementById("pass").value;
+	var user=document.getElementById("login").value;
+	var pass=document.getElementById("senha").value;
 	if ((user!="") && (pass!="")){
 		document.login.submit();
 	}else{
@@ -54,8 +54,10 @@ function cadastrarProd(){
 	var nome=document.getElementById("nome").value;
 	var descricao=document.getElementById("descricao").value;
 	var preco_venda=document.getElementById("preco_venda").value;
+	var preco_compra=document.getElementById("preco_compra").value;
+	var quantidade=document.getElementById("quantidade").value;
 
-	if ((nome!="") && (descricao!="")  && (preco_venda!="") && (preco_venda >"0")){
+	if ((nome!="") && (descricao!="")  && (preco_venda!="") && (preco_venda >"0") && (preco_compra!="") && (preco_compra >"0") && (quantidade!="") ){
 		document.cadastroproduto.submit();
 	}else{
 		alert ("Preencha todos os campos corretamente!");
@@ -65,11 +67,24 @@ function cadastrarProd(){
 function comprar(){
 	var quant=document.getElementById("quantidade").value;
 	if(quant!=""){
-		document.produto.submit();
+		document.finalizarcompra.submit();
 	}else{
 		alert ("Digite uma quantidade válida!");
 	}
 }
 function goBack() {
     window.history.back();
+}
+
+
+function alterarProd(){
+	var nome=document.getElementById("nome").value;
+	var descricao=document.getElementById("descricao").value;
+	var preco_venda=document.getElementById("preco_venda").value;
+
+	if ((nome=="") && (descricao=="")  && (preco_venda=="")){
+		alert ("Preencha ao menos um campo para alteração!");
+	}else{
+		document.editarproduto.submit();
+	}
 }

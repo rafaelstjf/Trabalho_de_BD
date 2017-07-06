@@ -13,7 +13,7 @@
 	<table align="center" border="1">
 		<tr>
 			<th colspan='2'>
-				O produto na quantidade desejada está indisponível
+				O produto na quantidade desejada está indisponível na sua região
 			</th>
 		</tr>
 		<tbody>
