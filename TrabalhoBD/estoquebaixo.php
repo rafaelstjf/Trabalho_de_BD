@@ -14,26 +14,19 @@
 
 	$link = mysqli_connect("localhost", "root", "", "trab");
 
-	$query = "SELECT prod.nome, dep.nome, SUM(est.quantidade) , reg.cidade, reg.estado
+	$query = "SELECT prod.nome, SUM(est.quantidade)
 		FROM trab.produto AS prod 
          LEFT JOIN trab.item AS item ON (prod.codigo = item.cod_produto)
          LEFT JOIN trab.estoque AS est ON (est.cod_item = item.codigo)
-         LEFT JOIN trab.deposito AS dep ON (est.cod_deposito = dep.codigo)
-         LEFT JOIN trab.endereco as ende ON (ende.codigo = dep.cod_endereco)
-         LEFT JOIN trab.regiao as reg ON (ende.cod_regiao = reg.codigo)
-		GROUP BY dep.codigo
-		HAVING (SUM(est.quantidade) <= 50000 OR SUM(est.quantidade) IS NULL)
-		ORDER BY dep.codigo;";
+GROUP BY prod.codigo
+HAVING (SUM(est.quantidade) <= 5 OR SUM(est.quantidade) IS NULL)";
 
 	$consultaSQL = mysqli_query($link,$query);
 
 	echo "<table border='1' align='center'>
 		<tr align='center'>	
 			<td>Nome do Produto</td>
-			<td>Nome do Depósito</td>
 			<td>Quantidade no Estoque</td>
-			<td>Cidade do Depósito</td>
-			<td>Estado do Depósito</td>
 		</tr>";
 	while($row = mysqli_fetch_row($consultaSQL)){
 		echo "<tr>";

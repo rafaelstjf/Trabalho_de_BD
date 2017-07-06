@@ -48,7 +48,7 @@
 	while($row_cabeçalho = mysqli_fetch_row($itens)){
 		echo "<tr align='center'>";
 		for($i=0; $i<mysqli_num_fields($itens); $i++){
-			if(($i%4)-3==0) echo "<td><a href='relatorio.php'>Visualizar</a></td>";
+			if(($i%4)-3==0) echo "<td><a href='relatorio.php?cod_pedido=".$cod_pedido."'>Visualizar</a></td>";
 			else echo "<td>".$row_cabeçalho[$i]."</td>";
 		}
 		echo "</tr>";

@@ -14,7 +14,7 @@
 
 	session_start();
 
-
+	$cod_ped = $_GET['cod_pedido'];
 	$codigo_login = $_SESSION['codigo_login'];
 	
 	$link = mysqli_connect("localhost", "root", "", "trab");
