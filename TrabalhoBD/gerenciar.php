@@ -18,11 +18,8 @@
 				<td><a href="listar_cliente.php">Listar Clientes</a></td>
 				<td><a href="listar_fornecedores.php">Listar Fornecedores</a></td>
 				<td><a href="listar_regiao_deposito.php">Listar Regiões/Depósito</a></td>
-
-
-
-
 				<td><a href="lista_produtos2.php">Listar Produtos</a></td>
+				<td><a href="estoquebaixo.php">Ver produtos em baixa nos estoques</a></td>
 			</tr>			
 
 	</table>

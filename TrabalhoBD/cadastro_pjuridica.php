@@ -27,7 +27,7 @@
 				<td><input type="text" name="cnpj" id="cnpj"/></td>
 			</tr>
 			<tr>
-				<td>Login:</td>
+				<td>Email:</td>
 				<td><input type="text" name="login" id="login"/></td>
 			</tr>
 			<tr>
