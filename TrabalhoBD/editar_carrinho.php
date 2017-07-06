@@ -46,7 +46,7 @@
 		</tr>";
 	while($row_produtos = mysqli_fetch_row($l1)){
 		echo "<tr align='center'>";
-		for($i=0; $i<mysqli_num_fields($$l1); $i++){
+		for($i=0; $i<mysqli_num_fields($l1); $i++){
 			if(($i%5)-4!=0) echo "<td>".$row_produtos[$i]."</td>";
 			if(($i%5)-4==0) echo "<td> <a href=remover_item.php?codigo=".$row_produtos[$i].">Remover</a></td>";
 			

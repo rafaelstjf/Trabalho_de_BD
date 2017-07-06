@@ -88,3 +88,12 @@ function alterarProd(){
 		document.editarproduto.submit();
 	}
 }
+
+function cadastrarDepo(){
+	var nome=document.getElementById("nome").value;
+	if ((nome!="")){
+		document.cadastrodeposito.submit();
+	}else{
+		alert ("Preencha todos os campos corretamente!");
+	}
+}

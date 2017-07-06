@@ -24,9 +24,9 @@
 
 	$select = "SELECT quantidade FROM comp_pedido WHERE cod_item = '$cod_item' AND cod_cliente = '$codigo_login'";
 
-	$sel = mysqli_query($link,$select);
-	$quant = $sel[0];
-
+	$sel = mysqli_query($link,$select);	
+	$obj4 = mysqli_fetch_row($sel);
+	$quant = $obj4[0];
 
 	$q1 = "SELECT cod_endereco FROM pessoa WHERE cod_cliente = '$codigo_login'";
 	$s1 = mysqli_query($link,$q1);
