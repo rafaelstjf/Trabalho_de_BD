@@ -56,9 +56,6 @@
 	$delete = mysqli_query($link,$delete_cp);
 
 	header("Location: editar_carrinho.php");
-
-
-	
 	
 	mysqli_close($link);
 

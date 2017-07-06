@@ -30,35 +30,28 @@
 	$objpedido = mysqli_fetch_row($codp);
 	$cod_pedido = $objpedido[0];
 
-
-
-
-	$cabeçalho = "SELECT nota_fiscal, valor_total, data_pedido , cod_pedido  FROM  pedido  WHERE cod_cliente = '$codigo_login'
-";
-	$itens = mysqli_query($link,$cabeçalho);
+	$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, cp.quantidade, pr.preco_venda * cp.quantidade as total FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND cp.cod_cliente = '$codigo_login'";
+	$l1 = mysqli_query($link,$listar);
 
 
 
 
-	
+
 	echo "<table border='1' align='center'>
 			<tr align='center'>	
-			<td>Nota Fiscal</td>
+			<td>Nome do Produto</td>
+			<td>Descrição</td>
+			<td>Preço</td>
+			<td>Quantidade</td>
 			<td>Valor Total</td>
-			<td>Data do Pedido</td>
-			<td>Relatório</td>
-		</tr>";
-	while($row_cabeçalho = mysqli_fetch_row($itens)){
+		</tr>";	
+	while($row_produtos = mysqli_fetch_row($l1)){
 		echo "<tr align='center'>";
-		for($i=0; $i<mysqli_num_fields($itens); $i++){
-			if(($i%4)-3==0) echo "<td><a href='relatorio.php'>Visualizar</a></td>";
-			else echo "<td>".$row_cabeçalho[$i]."</td>";
+		for($i=0; $i<mysqli_num_fields($l1); $i++){
+			echo "<td>".$row_produtos[$i]."</td>";
 		}
 		echo "</tr>";
 	}
-	echo "</table>";
-
-
 	echo "</table>";
 
 	

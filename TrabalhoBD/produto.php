@@ -22,7 +22,7 @@
 
 	$obj = mysqli_fetch_row($consultaSQL);
 	echo "
-		<form name='finalizarcompra' method='post' action='finalizarcompra.php'>
+		<form name='produto' method='post' action='finalizarcompra.php'>
 		<table border='1' align='center'>
 			<tr align='center'>	
 				<td>nome</td>
@@ -42,7 +42,7 @@
 			<tr>
 				<input type='hidden' name='preco' id='preco' value='".$obj[2]."' />
 				<input type='hidden' name='codigo_produto' id='codigo_produto' value='".$codigo_produto."' />
-				<td colspan ='3' align='center'><input type='button' class='button'  value='Comprar' onclick='comprar();'></td>
+				<td colspan ='3' align='center'><input type='submit' value='Comprar' onclick='comprar();'></td>
 			</tr>
 		</table>
 		</form>";

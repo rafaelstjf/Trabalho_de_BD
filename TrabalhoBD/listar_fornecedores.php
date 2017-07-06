@@ -3,36 +3,51 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Trabalho de Banco de Dados</title>
-
-<script type="text/javascript" src="JS/script.js"></script>
-
 </head>
 <body> 
 
 
-<?php 
+
+<?php
+	
 	$link = mysqli_connect("localhost", "root", "", "trab");
-	$query = "SELECT nome, descricao, preco_venda, codigo FROM produto ";
+	$query = "SELECT p.cnpj,p.nome,e.rua,e.numero,e.complemento,e.bairro,r.cidade,r.estado FROM pessoa AS p, endereco AS e, regiao AS r WHERE tipo = '1' AND p.cod_endereco = e.codigo AND e.cod_regiao = r.codigo";
 	$consultaSQL = mysqli_query($link,$query);
 
 	echo "<table border='1' align='center'>
 		<tr align='center'>	
-			<td>nome</td>
-			<td>descrição</td>
-			<td colspan='2'>preço</td>
+			<td>CNPJ</td>
+			<td>NOME</td>
+			<td>RUA</td>
+			<td>NÚMERO</td>
+			<td>COMPLEMENTO</td>
+			<td>BAIRRO</td>
+			<td>CIDADE</td>
+			<td>ESTADO</td>
 		</tr>";
 	while($row = mysqli_fetch_row($consultaSQL)){
 		echo "<tr>";
 		for($i=0; $i<mysqli_num_fields($consultaSQL); $i++){
-			if(($i%4)-3!=0) echo "<td>".$row[$i]."</td>";
-			if(($i%4)-3==0) echo "<td> <a href=produto.php?codigo=".$row[$i].">Comprar</a></td>";
-
+			echo "<td>".$row[$i]."</td>";
 		}
 		echo "</tr>";
 	}
-	echo "</table>";
+	echo "</tr></table>";
 	mysqli_close($link);
 ?>
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

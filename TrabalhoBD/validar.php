@@ -11,7 +11,7 @@
 <?php
 	session_start();
 
-	$nome=$_POST["nome"];
+	$nome=$_POST["login"];
 	$senha=$_POST["senha"];
 
 	$link = mysqli_connect("localhost", "root", "", "trab");
@@ -24,7 +24,7 @@
 	$saida = mysqli_num_rows($consultaSQL);
 
 	$_SESSION['codigo_login'] = $codigo_login;
-
+	echo $saida."  ".$tipo;
 	if($saida == 1) {
 		if($tipo == 0){
 			header ("Location: lista_produtos.php");
