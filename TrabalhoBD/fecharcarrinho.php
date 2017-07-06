@@ -19,7 +19,7 @@
 	
 	$link = mysqli_connect("localhost", "root", "", "trab");
 
-	$q = "UPDATE pedido SET status = '0' WHERE cod_cliente = '$codigo_login'";
+	$q = "UPDATE pedido SET status = '1' WHERE cod_cliente = '$codigo_login'";
 	$carrinho_fechado = mysqli_query($link, $q);
 
 

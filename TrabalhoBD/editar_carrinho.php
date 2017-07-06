@@ -20,7 +20,7 @@
 	$link = mysqli_connect("localhost", "root", "", "trab");
 
 	$q = "UPDATE pedido SET status = '0' WHERE cod_cliente = '$codigo_login'";
-	$carrinho_fechado = mysqli_query($link, $q);
+	$carrinho_aberto = mysqli_query($link, $q);
 
 
 
@@ -32,7 +32,8 @@
 
 
 
-	$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, cp.quantidade, cp.cod_item  FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND pe.cod_cliente = '$codigo_login'";
+	$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, SUM(cp.quantidade), SUM(pr.preco_venda * cp.quantidade) AS preco_total, cp.cod_item  FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND pe.cod_cliente ='$codigo_login'
+GROUP BY pr.codigo";
 	$l1 = mysqli_query($link,$listar);
 
 
