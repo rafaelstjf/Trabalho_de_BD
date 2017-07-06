@@ -14,6 +14,14 @@
 			<tr align='center'>	
 				<td><a href="cadastro_pjuridica.php">Cadastrar Fornecedor</a></td>
 				<td><a href="cadastrar_produtos.php">Cadastrar Produtos</a></td>
+
+				<td><a href="listar_cliente.php">Listar Clientes</a></td>
+				<td><a href="listar_fornecedor.php">Listar Fornecedores</a></td>
+				<td><a href="listar_regiao_deposito.php">Listar Regiões/Depósito</a></td>
+
+
+
+
 				<td><a href="lista_produtos2.php">Listar Produtos</a></td>
 			</tr>			
 

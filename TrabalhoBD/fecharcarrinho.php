@@ -25,23 +25,10 @@
 
 
 
-	$list = "SELECT cod_pedido FROM pedido WHERE cod_cliente = '$codigo_login'";
-	$codp = mysqli_query($link,$list);
-	$objpedido = mysqli_fetch_row($codp);
-	$cod_pedido = $objpedido[0];
 
-
-
-
-	$cabeçalho = "SELECT pe.nota_fiscal, pe.valor_total, pe.data_pedido  FROM  pedido as pe WHERE cod_cliente = '$codigo_login'
+	$cabeçalho = "SELECT nota_fiscal, valor_total, data_pedido  FROM  pedido WHERE cod_cliente = '$codigo_login'
 ";
 	$itens = mysqli_query($link,$cabeçalho);
-
-
-	$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, cp.quantidade  FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND cod_cliente = '$codigo_login'";
-	$l1 = mysqli_query($link,$listar);
-	$row_produtos = mysqli_fetch_row($l1);
-
 
 
 
@@ -52,9 +39,9 @@
 			<td>Valor Total</td>
 			<td>Data do Pedido</td>
 		</tr>";
-	while($row_cabeçalho = mysqli_fetch_row($consultaSQL)){
+	while($row_cabeçalho = mysqli_fetch_row($itens)){
 		echo "<tr align='center'>";
-		for($i=0; $i<mysqli_num_fields($consultaSQL); $i++){
+		for($i=0; $i<mysqli_num_fields($itens); $i++){
 			echo "<td>".$row_cabeçalho[$i]."</td>";
 		}
 		echo "</tr>";
@@ -62,24 +49,6 @@
 	echo "</table>";
 
 
-
-	echo "<table border='1' align='center'>
-			<tr align='center'>	
-			<td>Nome do Produto</td>
-			<td>Descrição</td>
-			<td>Preço</td>
-			<td>Quantidade</td>
-		</tr>";
-	while($row_produtos = mysqli_fetch_row($consultaSQL)){
-		echo "<tr align='center'>";
-		for($i=0; $i<mysqli_num_fields($consultaSQL); $i++){
-			echo "<td>".$row_produtos[$i]."</td>";
-		}
-		echo "</tr>";
-	}
-	echo "</table>";
-
-	
 
 
 

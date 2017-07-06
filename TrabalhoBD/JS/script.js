@@ -55,7 +55,7 @@ function cadastrarJ(){
 function comprar(){
 	var quant=document.getElementById("quantidade").value;
 	if(quant!=""){
-		document.finalizarcompra.submit();
+		document.produto.submit();
 	}else{
 		alert ("Digite uma quantidade válida!");
 	}
