@@ -30,7 +30,8 @@
 	$objpedido = mysqli_fetch_row($codp);
 	$cod_pedido = $objpedido[0];
 
-	$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, cp.quantidade, pr.preco_venda * cp.quantidade as total FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND cp.cod_cliente = '$codigo_login'";
+	//$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, cp.quantidade, pr.preco_venda * cp.quantidade as total FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND cp.cod_cliente = '$codigo_login'";
+	$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, SUM(cp.quantidade), SUM(pr.preco_venda * cp.quantidade) AS preco_total  FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND pe.cod_cliente ='$codigo_login' GROUP BY pr.codigo;";
 	$l1 = mysqli_query($link,$listar);
 
 

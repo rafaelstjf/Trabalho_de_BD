@@ -19,22 +19,19 @@
 	
 	$link = mysqli_connect("localhost", "root", "", "trab");
 
-	$q = "UPDATE pedido SET status = '0' WHERE cod_cliente = '$codigo_login'";
+	$qcod = "SELECT cod_pedido FROM pedido WHERE cod_cliente = '$codigo_login' AND status = '0'";
+	$scod = mysqli_query($link, $qcod);
+	$objcod = mysqli_fetch_row($scod);
+	$cod_pedido = $objcod[0];
+
+	$nota = rand(0, 10000000000);
+
+	$q = "UPDATE pedido SET status='1', nota_fiscal='(FLOOR( RAND() * 10000000))'  WHERE cod_pedido = '$cod_pedido'";
 	$carrinho_fechado = mysqli_query($link, $q);
 
 
 
-
-	$list = "SELECT cod_pedido FROM pedido WHERE cod_cliente = '$codigo_login'";
-	$codp = mysqli_query($link,$list);
-	$objpedido = mysqli_fetch_row($codp);
-	$cod_pedido = $objpedido[0];
-
-
-
-
-	$cabeçalho = "SELECT nota_fiscal, valor_total, data_pedido , cod_pedido  FROM  pedido  WHERE cod_cliente = '$codigo_login'
-";
+	$cabeçalho = "SELECT nota_fiscal, valor_total, data_pedido , cod_pedido  FROM  pedido  WHERE cod_pedido = '$cod_pedido'";
 	$itens = mysqli_query($link,$cabeçalho);
 
 

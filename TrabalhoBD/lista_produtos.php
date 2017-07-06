@@ -7,7 +7,7 @@
 <script type="text/javascript" src="JS/script.js"></script>
 
 </head>
-<body> 
+<body style="text-align:center;"> 
 
 
 <?php 
@@ -33,6 +33,8 @@
 	echo "</table>";
 	mysqli_close($link);
 ?>
+
+<a href="lista_compras.php" style="text-algin: center;">Minhas Compras</a>
 
 </body>
 </html>
