@@ -7,28 +7,17 @@
 <script type="text/javascript" src="JS/script.js"></script>
 
 </head>
-<body> 
+<body>
 
 
 	<table border='1' align='center'>
-			<tr align='center'>	
+			<tr align='center'>
 				<td><a href="cadastro_pjuridica.php">Cadastrar Fornecedor</a></td>
-				<td><a href="cadastrar_produtos.php">Cadastrar Produtos</a></td>
+				<td><a href="cadastro_produto.php">Cadastrar Produtos</a></td>
 				<td><a href="lista_produtos2.php">Listar Produtos</a></td>
-			</tr>			
+			</tr>
 
 	</table>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

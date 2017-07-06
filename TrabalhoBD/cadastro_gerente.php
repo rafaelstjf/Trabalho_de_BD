@@ -7,7 +7,7 @@
 <script type="text/javascript" src="JS/script.js"></script>
 
 </head>
-<body> 
+<body>
 
 
 	<form name="cadastrofisico" method="post" action="cadastro_pessoa.php">
@@ -70,11 +70,14 @@
 				<td>Estado:</td>
 				<td><input type="text" name="estado" id="estado"/></td>
 			</tr>
-	
+
 
 			<input type="hidden" name="type" id="type" value="2"/>
 			<tr>
-				<td colspan="2" align="center"><input class="button" value="Cadastrar"  type="button"  onclick="cadastrarF();"/></td>
+				<td align="center" colspan="2">
+					<input class="button" value="Cadastrar"  type="button"  onclick="cadastrarF();"/>
+					<input class="button" value="Voltar"  type="button" onclick="goBack();"/>
+				</td>
 			</tr>
 
 		</tbody>

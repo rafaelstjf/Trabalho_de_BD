@@ -50,7 +50,17 @@ function cadastrarJ(){
 		alert ("Preencha todos os campos corretamente!");
 	}
 }
+function cadastrarProd(){
+	var nome=document.getElementById("nome").value;
+	var descricao=document.getElementById("descricao").value;
+	var preco_venda=document.getElementById("preco_venda").value;
 
+	if ((nome!="") && (descricao!="")  && (preco_venda!="") && (preco_venda >"0")){
+		document.cadastroproduto.submit();
+	}else{
+		alert ("Preencha todos os campos corretamente!");
+	}
+}
 
 function comprar(){
 	var quant=document.getElementById("quantidade").value;
@@ -59,5 +69,7 @@ function comprar(){
 	}else{
 		alert ("Digite uma quantidade válida!");
 	}
-
+}
+function goBack() {
+    window.history.back();
 }
