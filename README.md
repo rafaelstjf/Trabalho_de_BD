@@ -14,11 +14,11 @@ Trabalho de banco de dados 2017.1
 - [x] Cadastro de pessoa juridica
 - [x] Listagem de produtos
 - [x] Detalhes do produto
-- [ ] Cadastro de ~~produtos~~ **itens** de fornecedores (*feito pelo gerente*)
-- [ ] Cadastro e manutenção de produtos (*alterar nome, descrição, preço de venda*)
+- [x] Cadastro de ~~produtos~~ **itens** de fornecedores (*feito pelo gerente*)
+- [x] Cadastro e manutenção de produtos (*alterar nome, descrição, preço de venda*)
 - [ ] Listar produtos em baixa no estoque (*a seleção disso pode ser feita por um trigger, mas deve ter uma tela para mostrar a relação de produtos em baixa*)
 - [x] Emissão de nota fiscal
-- [ ] Relatorio de compras (*com filtro por data*)
+- [x] Relatorio de compras (*com filtro por data*)
 - [x] Listagem de clientes cadastrados
 - [x] Listagem de fornecedores cadastrados
 - [x] Listagem de regiões cadastradas (*e quais possuem um deposito relacionado*)
