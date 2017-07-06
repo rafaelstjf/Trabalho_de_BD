@@ -13,9 +13,9 @@ create table trab.endereco(
   codigo SERIAL,
   cep varchar(10) not NULL,
   numero varchar(10) not NULL,
-  rua varchar(30) not NULL,
-  bairro varchar(15) not NULL,
-  complemento varchar(10) NULL,
+  rua varchar(60) not NULL,
+  bairro varchar(30) not NULL,
+  complemento varchar(30) NULL,
   cod_regiao BIGINT UNSIGNED NOT NULL
 );
 create table trab.telefone(
