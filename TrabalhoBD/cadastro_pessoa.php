@@ -77,7 +77,7 @@
 	$cadastro_tel = mysqli_query($link,$tel);
 
 	mysqli_close($link);
-	if($tipo == 0) header ("Location: lista_produtos.php");
+	if($tipo == 0) header ("Location: index.php");
 	else if($tipo == 2)  header ("Location: gerenciar.php");
 
 ?>
