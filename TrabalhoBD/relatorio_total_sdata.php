@@ -14,13 +14,10 @@
 
 	session_start();
 
-	$cod_ped = $_GET['cod_pedido'];
 	$codigo_login = $_SESSION['codigo_login'];
 	
 	$link = mysqli_connect("localhost", "root", "", "trab");
 
-	$q = "UPDATE pedido SET status = '0' WHERE cod_cliente = '$codigo_login'";
-	$carrinho_fechado = mysqli_query($link, $q);
 
 
 
@@ -31,7 +28,7 @@
 	$cod_pedido = $objpedido[0];
 
 	//$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, cp.quantidade, pr.preco_venda * cp.quantidade as total FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND cp.cod_cliente = '$codigo_login'";
-	$listar = "SELECT pr.nome, pr.descricao, cp.valor_venda, cp.quantidade, cp.valor_venda * cp.quantidade AS preco_total  FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND pe.cod_cliente ='$codigo_login' GROUP BY pr.codigo;";
+	$listar = "SELECT DISTINCT pr.nome, pr.descricao, cp.valor_venda, cp.quantidade, cp.valor_venda * cp.quantidade, pe.data_pedido FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND pe.cod_cliente = '$codigo_login' ORDER BY pr.nome";
 	$l1 = mysqli_query($link,$listar);
 
 
@@ -45,6 +42,7 @@
 			<td>Preço</td>
 			<td>Quantidade</td>
 			<td>Valor Total</td>
+			<td>Data</td>
 		</tr>";	
 	while($row_produtos = mysqli_fetch_row($l1)){
 		echo "<tr align='center'>";

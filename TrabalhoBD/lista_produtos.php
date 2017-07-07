@@ -10,7 +10,8 @@
 <body style="text-align:center;"> 
 
 
-<?php 
+<?php
+
 	$link = mysqli_connect("localhost", "root", "", "trab");
 	$query = "SELECT nome, descricao, preco_venda, codigo FROM produto ";
 	$consultaSQL = mysqli_query($link,$query);
@@ -31,10 +32,18 @@
 		echo "</tr>";
 	}
 	echo "</table>";
+
+	echo"
+<a href='lista_compras.php' style='text-algin: center;''>Minhas Compras</a>
+<a href='relatorio_total.php' style='text-algin: center;'>Relatório</a>
+";
+
+
+
+
+
 	mysqli_close($link);
 ?>
-
-<a href="lista_compras.php" style="text-algin: center;">Minhas Compras</a>
 
 </body>
 </html>

@@ -66,8 +66,6 @@
 
 
 
-    $query8 = "CALL preco_sugerido(cod_produto)";
-    $procedure = mysqli_query($link,$query4);
 
 
 
@@ -114,6 +112,8 @@
 
 
 
+    $query8 = "CALL preco_sugerido(cod_produto) or die('Erro na query da procedure:  . mysqli_error()";
+    $procedure = mysqli_query($link,$query8);
 
     
     mysqli_close($link);

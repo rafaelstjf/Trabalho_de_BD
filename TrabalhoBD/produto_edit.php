@@ -6,15 +6,15 @@
 	$descricao = $_POST['descricao'];
 	$preco_venda = $_POST['preco_venda'];
 	if($nome!=""){
-		$query1 = "UPDATE produto SET nome = '$nome' WHERE codigo = '$cod_produto";
+		$query1 = "UPDATE produto SET nome = $nome WHERE codigo = $cod_produto";
 		$update = mysqli_query($link,$query1);
 	}
 	if($descricao!="") {
-		$query2 = "UPDATE produto SET descricao = '$descricao' WHERE codigo = '$cod_produto";
+		$query2 = "UPDATE produto SET descricao = $descricao WHERE codigo = $cod_produto";
 		$update = mysqli_query($link,$query2);
 	}
 	if($preco_venda!="") {
-		$query3 = "UPDATE produto SET preco_venda = '$preco_venda' WHERE codigo = '$cod_produto";
+		$query3 = "UPDATE produto SET preco_venda = $preco_venda WHERE codigo = $cod_produto";
 		$update = mysqli_query($link,$query3);
 
 

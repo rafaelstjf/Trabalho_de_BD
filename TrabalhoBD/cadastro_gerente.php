@@ -27,7 +27,7 @@
 				<td><input type="text" name="cpf" id="cpf"/></td>
 			</tr>
 			<tr>
-				<td>Login:</td>
+				<td>Email:</td>
 				<td><input type="text" name="login" id="login"/></td>
 			</tr>
 			<tr>

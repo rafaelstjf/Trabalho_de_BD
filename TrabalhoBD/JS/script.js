@@ -97,3 +97,12 @@ function cadastrarDepo(){
 		alert ("Preencha todos os campos corretamente!");
 	}
 }
+function vai(){
+	var datai=document.getElementById("dataI").value;
+	var dataf=document.getElementById("dataF").value;
+	if ((datai!="") && (dataf!=)){
+		document.cadastrodeposito.submit();
+	}else{
+		alert ("Preencha todos os campos corretamente!");
+	}
+}

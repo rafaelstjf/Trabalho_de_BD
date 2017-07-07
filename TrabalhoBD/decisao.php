@@ -15,6 +15,7 @@
 				<td><a href="lista_produtos.php">Continuar comprando</a></td>
 				<td><a href="editar_carrinho.php">Editar Carrinho</a></td>
 				<td><a href="fecharcarrinho.php">Fechar Carrinho</a></td>
+				<td><a href="relatorio_total.php">Todas as Compras até hoje</a></td>
 			</tr>			
 
 	</table>

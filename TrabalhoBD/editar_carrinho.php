@@ -32,7 +32,7 @@
 
 
 
-	$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, SUM(cp.quantidade), SUM(pr.preco_venda * cp.quantidade) AS preco_total, cp.cod_item  FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND pe.cod_cliente ='$codigo_login'
+	$listar = "SELECT pr.nome, pr.descricao, pr.preco_venda, SUM(cp.quantidade), SUM(pr.preco_venda * cp.quantidade), cp.cod_item  FROM item as t , comp_pedido as cp, produto as pr, pedido as pe WHERE pr.codigo=t.cod_produto AND t.codigo = cp.cod_item AND cp.cod_pedido = '$cod_pedido' AND pe.cod_cliente ='$codigo_login'
 GROUP BY pr.codigo";
 	$l1 = mysqli_query($link,$listar);
 
@@ -43,13 +43,14 @@ GROUP BY pr.codigo";
 			<td>Descrição</td>
 			<td>Preço</td>
 			<td>Quantidade</td>
+			<td>Total</td>
 			<td>Remover</td>
 		</tr>";
 	while($row_produtos = mysqli_fetch_row($l1)){
 		echo "<tr align='center'>";
 		for($i=0; $i<mysqli_num_fields($l1); $i++){
-			if(($i%5)-4!=0) echo "<td>".$row_produtos[$i]."</td>";
-			if(($i%5)-4==0) echo "<td> <a href=remover_item.php?codigo=".$row_produtos[$i].">Remover</a></td>";
+			if(($i%6)-5!=0) echo "<td>".$row_produtos[$i]."</td>";
+			if(($i%6)-5==0) echo "<td> <a href=remover_item.php?codigo=".$row_produtos[$i].">Remover</a></td>";
 			
 
 		}

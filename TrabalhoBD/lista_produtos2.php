@@ -19,15 +19,15 @@
 		<tr align='center'>	
 			<td>nome</td>
 			<td>descrição</td>
-			<td>preço sugerido</td>
 			<td>preço de venda</td>
+			<td>preço sugerido</td>
 			<td colspan='2'>opções</td>
 		</tr>";
 	while($row = mysqli_fetch_row($consultaSQL)){
 		echo "<tr>";
 		for($i=0; $i<mysqli_num_fields($consultaSQL); $i++){
 			if(($i%5)-4!=0) echo "<td>".$row[$i]."</td>";
-			if(($i%5)-4==0) echo "<td> <a href=editar_item_produto.php?codigo=".$row[$i]."&opcao=1>editar</a></td>";
+			if(($i%5)-4==0) echo "<td> <a href=editar_item_produto.php?codigo=".$row[$i].">editar</a></td>";
 
 		}
 		echo "</tr>";

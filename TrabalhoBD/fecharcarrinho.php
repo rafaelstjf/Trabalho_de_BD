@@ -24,7 +24,7 @@
 	$objcod = mysqli_fetch_row($scod);
 	$cod_pedido = $objcod[0];
 
-	$nota = rand(0, 10000000000);
+	$nota = rand(0,1000000000);
 
 	$q = "UPDATE pedido SET status='1', nota_fiscal='(FLOOR( RAND() * 10000000))'  WHERE cod_pedido = '$cod_pedido'";
 	$carrinho_fechado = mysqli_query($link, $q);
