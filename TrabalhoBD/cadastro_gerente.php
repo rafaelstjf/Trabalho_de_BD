@@ -75,7 +75,7 @@
 			<input type="hidden" name="type" id="type" value="2"/>
 			<tr>
 				<td align="center" colspan="2">
-					<input class="button" value="Cadastrar"  type="button"  onclick="cadastrarF();"/>
+					<input class="button" value="Cadastrar"  type="submit"  onclick="cadastrarF();"/>
 					<input class="button" value="Voltar"  type="button" onclick="goBack();"/>
 				</td>
 			</tr>
