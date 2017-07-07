@@ -27,7 +27,7 @@
 				<td><input type="password" name="senha" id="senha"/></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input value="Login"  type="button"  onclick="validar();"/></td>
+				<td colspan="2" align="center"><input value="Login"  type="submit"  onclick="validar();"/></td>
 			</tr>
  			<tr>
 				<td colspan="2" align="center">Não tem login? <a href="cadastrar.php">Cadastre-se!</a></td>
